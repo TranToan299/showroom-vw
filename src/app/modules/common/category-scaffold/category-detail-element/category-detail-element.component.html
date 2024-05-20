@@ -1,0 +1,27 @@
+<div [id]="id" class="container {{mt?'':'mt-100'}}" [style]="mt?'margin-top:'+mt:''">
+  <div class="row ">
+    <div class="col-12">
+      <h1 class="text-center font-weight-bold fs-title-cate"  *ngIf="title">{{title}}</h1>
+      <p class="text-center text-secondary mt-3 " *ngIf="description">{{description}}
+      </p>
+    </div>
+  </div>
+  <div class="row mt-70 d-flex justify-content-between">
+    <div class="col-12 col-md-7">
+      <img [src]="image" alt="">
+    </div>
+    <div class="col-12 col-md-4 mt-3 mt-md-0" >
+      <div *ngFor="let info of infos">
+        <h5 class="font-weight-bold" style="display:inline-block">{{info.title}}</h5>
+        <p class="text-body">
+          {{info.description}}
+        </p>
+        <ul class="list-info mt-4" *ngIf="info.list">
+          <li class="text-black mobile-size item-info" *ngFor="let li of info.list">{{li}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

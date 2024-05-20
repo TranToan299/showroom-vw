@@ -1,0 +1,173 @@
+<div class="wrap">
+  <h3 class="text-center mb-5">So sánh xe</h3>
+  <div class="choose">
+    <ng-container *ngFor="let order of createRange(3)">
+      <div class="choose-item {{order==1?'mx-4':''}}">
+        <div class="jumbotron text-center" (click)="openModalChooseCar(order)" *ngIf="!objProductChoosed[order]">
+          <i class="pi pi-plus" style="font-size: 1.5rem"></i>
+        </div>
+        <div *ngIf="objProductChoosed[order]" style="position: relative;">
+          <div class="wrap-btn-close">
+            <i class="pi pi-times-circle text-danger" style="font-size: 1.5rem" (click)="removeCar(order)"></i>
+          </div>
+          <img src="{{objProductChoosed[order].ImageUrl}}" alt="">
+          <h6 class="text-center">{{objProductChoosed[order].Name}}</h6>
+          <p class="text-primary text-center">{{formatMoney(objProductChoosed[order].Price)}} vnđ</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="container mt-5">
+    <p-accordion>
+      <p-accordionTab header="Kích thước & Khối lượng"
+        [selected]="objProductChoosed[0]||objProductChoosed[1]||objProductChoosed[2]?true:false">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" *ngFor="let order of createRange(3)">
+                {{this.objProductChoosed[order]?this.objProductChoosed[order].Name:''}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let key of objKeyTable['size-volume']">
+              <tr>
+                <th scope="row">
+                  {{key}}
+                </th>
+                <ng-container *ngFor="let order of createRange(3)">
+                  <td *ngIf="objProductChoosedAttributes[order]">
+                    {{findValueFromKey(objProductChoosedAttributes[order],key)}}</td>
+                  <td *ngIf="!objProductChoosedAttributes[order]">
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </p-accordionTab>
+      <p-accordionTab header="Động cơ & Vận hành">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" *ngFor="let order of createRange(3)">
+                {{this.objProductChoosed[order]?this.objProductChoosed[order].Name:''}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let key of objKeyTable['engine-operation']">
+              <tr>
+                <th scope="row">
+                  {{key}}
+                </th>
+                <ng-container *ngFor="let order of createRange(3)">
+                  <td *ngIf="objProductChoosedAttributes[order]">
+                    {{findValueFromKey(objProductChoosedAttributes[order],key)}}</td>
+                  <td *ngIf="!objProductChoosedAttributes[order]">
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </p-accordionTab>
+      <p-accordionTab header="Ngoại thất">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" *ngFor="let order of createRange(3)">
+                {{this.objProductChoosed[order]?this.objProductChoosed[order].Name:''}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let key of objKeyTable['exterior']">
+              <tr>
+                <th scope="row">
+                  {{key}}
+                </th>
+                <ng-container *ngFor="let order of createRange(3)">
+                  <td *ngIf="objProductChoosedAttributes[order]">
+                    {{findValueFromKey(objProductChoosedAttributes[order],key)}}</td>
+                  <td *ngIf="!objProductChoosedAttributes[order]">
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </p-accordionTab>
+      <p-accordionTab header="Nội thất & Tiện nghi">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" *ngFor="let order of createRange(3)">
+                {{this.objProductChoosed[order]?this.objProductChoosed[order].Name:''}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let key of objKeyTable['interior-comfor']">
+              <tr>
+                <th scope="row">
+                  {{key}}
+                </th>
+                <ng-container *ngFor="let order of createRange(3)">
+                  <td *ngIf="objProductChoosedAttributes[order]">
+                    {{findValueFromKey(objProductChoosedAttributes[order],key)}}</td>
+                  <td *ngIf="!objProductChoosedAttributes[order]">
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </p-accordionTab>
+      <p-accordionTab header="An toàn & An ninh & Hỗ trợ người lái">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" *ngFor="let order of createRange(3)">
+                {{this.objProductChoosed[order]?this.objProductChoosed[order].Name:''}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let key of objKeyTable['safe-security-support_driver']">
+              <tr>
+                <th scope="row">
+                  {{key}}
+                </th>
+                <ng-container *ngFor="let order of createRange(3)">
+                  <td *ngIf="objProductChoosedAttributes[order]">
+                    {{findValueFromKey(objProductChoosedAttributes[order],key)}}</td>
+                  <td *ngIf="!objProductChoosedAttributes[order]">
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+</div>
+<!-- dialog choose car -->
+<p-dialog header="Chọn xe thêm vào so sánh" [(visible)]="showModalChooseCar" [modal]="true" [draggable]="false"
+  [resizable]="false">
+  <ul class="list-group">
+    <li class="list-group-item {{pro.isChoosed?'disabled':''}} " style='cursor: pointer;'
+      *ngFor="let pro of listProduct; let i = index" [attr.data-id]="pro.Id" [attr.data-index]="i"
+      [attr.data-id]="pro.Id" (click)="chooseCar($event)">
+      {{pro.Name}}</li>
+
+  </ul>
+</p-dialog>
+<app-menu-right></app-menu-right>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

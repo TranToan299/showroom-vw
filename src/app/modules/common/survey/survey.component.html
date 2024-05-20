@@ -1,0 +1,152 @@
+<div></div>
+<img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/surveyBanner.jpg" alt="" class="banner"
+    id="surveyBanner">
+<div class="wrap" class="mt-100" style="margin-bottom:200px;">
+    <div class="container">
+        <div style="width: 100%">
+            <app-category-h1 [name]="objTitle.name" [isCenterDescription]="objTitle.isCenterDescription" [mt]="">
+            </app-category-h1>
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-10">
+                    <p class="text-body h6">
+                        Chúng tôi xin chân thành cảm ơn Quý Khách đã tín nhiệm sử dụng sản phẩm và dịch vụ của chúng
+                        tôi.
+                    </p>
+                    <p class="text-body h6" style="margin-top:10px;">Kính mong Quý Khách dành thời
+                        gian khảo sát đánh giá/ góp ý, những thông tin quý báu của Quý Khách sẽ
+                        được chúng tôi phân tích và sử dụng để ngày càng hoàn thiện về chất lượng dịch vụ tốt hơn.</p>
+                    <p class="text-body h6" style="margin-top:10px;">
+                        Chúng tôi có mặt ở đây để lắng nghe và thu nhận ý kiến, vì vậy hãy chia sẻ với chúng tôi:
+                    </p>
+                </div>
+            </div>
+            <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12">
+                <div class="row form justify-content-center mt-5">
+                    <div class="col-12 col-sm-10 col-lg-10">
+                        <h3 class="col-12 col-sm-10 col-lg-8 supHeader" style="padding:0 !important; margin-top:10px;">
+                            Thông tin cá nhân
+                        </h3>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-12 col-sm-5 col-lg-5">
+                        <div class="field mt-3">
+                            <label for="name" class="d-block">Họ và tên: <span class="required">*</span></label>
+                            <input type="text" id="name" pInputText [(ngModel)]="objCustomer.name"
+                                [style]="{ width: '100%' }" [readonly]="this.isEditable"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 col-lg-5">
+                        <div class="field mt-3">
+                            <label for="phone" class="d-block">Số điện thoại: <span class="required">*</span></label>
+                            <!-- <p-inputMask id="phone" [style]="{ width: '100%' }" mask="9999 999 999"
+                                [(ngModel)]="objCustomer.phone">
+                            </p-inputMask> -->
+                            <input type="text" pInputText [(ngModel)]="objCustomer.phone" [style]="{ width: '100%' }" [readonly]="this.isEditable"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 col-lg-5">
+                        <div class="field mt-3">
+                            <label for="email" class="d-block">Email: </label>
+                            <input type="text" pInputText [(ngModel)]="objCustomer.email" [style]="{ width: '100%' }" [readonly]="this.isEditable"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 col-lg-5">
+                        <div class="field mt-3">
+                            <label for="typeCar" class="d-block">Loại xe: <span class="required">*</span></label>
+                            <!-- <p-dropdown id="typeCar" [options]="listProduct" [(ngModel)]="objCustomer.productName"
+                                [style]="{ width: '100%' }" optionLabel="CategoryName" optionValue="CategoryName"
+                                placeholder="Chọn">
+                            </p-dropdown> -->
+                            <input type="text" pInputText [(ngModel)]="objCustomer.productName" [style]="{ width: '100%' }" [readonly]="this.isEditable"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-10 col-lg-10">
+                        <div class="field mt-3">
+                            <label for="note" class="d-block">Số khung xe: <span class="required">*</span></label>
+                            <input type="text" pInputText [(ngModel)]="objCustomer.chassisNumber"  [readonly]="this.isEditable"
+                                [style]="{ width: '100%' }" />
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 col-sm-10 col-lg-10">
+                        <h3 class="col-12 col-sm-10 col-lg-8 supHeader" style="padding:0 !important; margin-top:30px;">
+                            Dịch vụ trải nghiệm*:
+                        </h3>
+
+                        <div class="field-checkbox d-flex align-item-center">
+                            <p-radioButton name="newCar" [value]="0" [(ngModel)]="service" label="Xe mới" [disabled]="true">
+                            </p-radioButton>
+                        </div>
+
+                        <div class="field-checkbox d-flex align-item-center">
+                            <p-radioButton name="afterSaleService" [value]="1" [(ngModel)]="service" [disabled]="true"
+                                label="Dịch vụ hậu mãi">
+                            </p-radioButton>
+                        </div>
+                    </div> -->
+                    <div class="col-12 col-sm-10 col-lg-10">
+                        <h3 class="col-12 col-sm-10 col-lg-10 supHeader" style="padding:0 !important; margin-top:30px;">
+                            Với thang điểm từ 1* - 5* Quý khách đánh giá như thế nào về những trải nghiệm sản phẩm/dịch
+                            vụ của chúng tôi:
+                        </h3>
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-inline rating-list" *ngFor="let star of stars"
+                                        style="display: inline-block">
+                                        <li (click)="countStar(star)" [ngClass]="{ selected: star <= selectedValue }">
+                                            <i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-sm-10 col-lg-10">
+                        <div class="field mt-3">
+                            <label for="description" class="d-block">Góp ý: </label>
+                            <textarea row="5" type="text" pInputText [(ngModel)]="objCustomer.description"
+                                [style]="{ width: '100%' }"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-12 col-sm-10 col-lg-5">
+                        <div class="field mt-3">
+                            <label class="d-block">Tỉnh thành <span class="required">*</span></label>
+                            <p-dropdown id="province" [options]="listProvince" [(ngModel)]="objCustomer.province"
+                                [showClear]="true" [filter]="true" optionLabel="name" optionValue="code"
+                                [style]="{ width: '100%' }" placeholder="Chọn tỉnh thành">
+                            </p-dropdown>
+                        </div>
+                    </div> -->
+                    <div class="col-12 col-sm-10 col-lg-10">
+                        <p class="text-body h6">
+                            Trân trọng,
+                        </p>
+                        <p class="text-body h6">
+                            Volkswagen Việt Nam
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center" style="margin: 20px 0 20px 0">
+                    <div class="btnBlue col-12 col-sm-4 text-center" style="margin: 4px 15px 4px 15px"
+                        (click)="submitOrder()">
+                        Xác nhận
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container">
+            <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+        </div>
+
+    </div>
+</div>

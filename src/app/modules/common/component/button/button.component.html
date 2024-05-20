@@ -1,0 +1,13 @@
+<!-- button.component.html -->
+
+<a *ngIf="link; else regularButton" [href]="link">
+  <button [ngClass]="['app-btn', 'app-btn-' + size , 'app-btn-' +type]">
+    {{ name }}
+  </button>
+</a>
+
+<ng-template #regularButton>
+  <button [type]="type" [ngClass]="['app-btn', 'app-btn-' + size, 'app-btn-' + type]">
+    {{ name }}
+  </button>
+</ng-template>

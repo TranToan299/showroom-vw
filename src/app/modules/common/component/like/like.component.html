@@ -1,0 +1,33 @@
+<div id="services" class="service">
+  <h2 class="title text-center font-weight-bold">Bạn cũng có thể thích</h2>
+  <div class="wrapServiceItem">
+    <!-- <div class="serviceItem ">
+      <img src="./assets/images/service2.svg" alt="">
+      <div class="serviceItemTitle">
+        Đặt hẹn dịch vụ
+      </div>
+      <a [routerLink]="'/product/service'" class="mobile-size">Tìm hiểu thêm</a>
+    </div> -->
+    <div class="serviceItem ">
+      <img src="./assets/images/vr.PNG" alt="">
+      <div class="serviceItemTitle">
+        VR Showroom
+      </div>
+      <a [routerLink]="'/'" class="mobile-size">Tìm hiểu thêm</a>
+    </div>
+    <div class="serviceItem " *ngIf="!isTeramont">
+      <img src="./assets/images/service2.jpg" alt="">
+      <div class="serviceItemTitle">
+        Lái thử xe
+      </div>
+      <a [routerLink]="'/product/test-drive'" class="mobile-size">Đặt lịch hẹn ngay</a>
+    </div>
+    <div class="serviceItem " *ngIf="isTeramont">
+      <img src="./assets/images/3DTeramont.PNG" alt="">
+      <div class="serviceItemTitle">
+        Trải nghiệm 360° Teramont 
+      </div>
+      <a href="https://virtualstudio.vw.com.vn/" class="mobile-size">Tìm hiểu thêm</a>
+    </div>
+  </div>
+</div>

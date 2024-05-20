@@ -1,0 +1,197 @@
+<div></div>
+<div class="wrapSocial">
+  <div class="social">
+    <a href="https://www.facebook.com/VolkswagenVietnamOfficial">
+      <img src="./assets/images/social/facebook.png" alt="">
+    </a>
+    <a href="https://www.instagram.com/volkswagen.vietnam/">
+      <img src="./assets/images/social/instagram.png" alt="">
+    </a>
+    <a href="https://www.linkedin.com/company/volkswagen-vietnam">
+      <img src="./assets/images/social/linkedin.png" alt="">
+    </a>
+    <a href="https://www.youtube.com/channel/UCQBeJtljPn3DNmJlwfzk4rQ">
+      <img src="./assets/images/social/youtube.png" alt="">
+    </a>
+    <a href="https://www.tiktok.com/@volkswagenvietnam">
+      <img style="height: 32px;" src="./assets/images/social/tiktok-icon.png" alt="">
+    </a>
+  </div>
+
+</div>
+<iframe name="vw" src="https://vr-showroom.vw.com.vn/" frameBorder="0" width="100%" class="iframe" scrolling="no"
+  allow="vr,gyroscope,accelerometer" allowFullScreen="false" loading="eager">
+</iframe>
+<div class="wrapScrollBottom">
+  <div class="scrollBottom" (click)="clickBtnScrollBottom()">
+    <i class="pi pi-angle-double-down"></i>
+  </div>
+</div>
+<!-- <div class="miniProduct">
+  <ng-container *ngFor="let pro of listProduct">
+    <div class="card zoomOwn">
+      <img src="{{pro.image}}" alt="" class="bg">
+      <div class="layer"></div>
+      <div class="text">
+        <div class="name">{{pro.name}}</div>
+        <div class="title">{{pro.title}}</div>
+      </div>
+      <img src="{{pro.icon}}" alt="" class="icon">
+    </div>
+  </ng-container>
+</div> -->
+<div class="listProduct">
+  <div class="wrapCard">
+
+    <!-- tcross -->
+    <!-- <div class="mb-4">
+      <div class="card pb-2 pb-lg-0" style="background: rgb(246, 234, 76)">
+        <div class="text">
+          <h3 class="name">T-Cross</h3>
+        </div>
+        <img src="./assets/images/cate/tcross/iconElegance.png" alt="" class="icon">
+      </div>
+      <div style="text-align: center;">
+        <a [routerLink]="'/tcross'"  class="customButton zoomOwn mobile-size">Tìm hiểu
+          thêm</a>
+      </div>
+    </div> -->
+
+    <!-- new tiquan  -->
+    <!-- <div class="mb-4">
+      <div class="card pb-2 pb-lg-0" style="background: rgb(138 133 209)">
+        <div class="text">
+          <h3 class="name" >Tiquan Mới</h3>
+        </div>
+        <img src="./assets/images/cate/newtiguan/blue.png" alt="" class="icon">
+      </div>
+      <div style="text-align: center;">
+        <a [routerLink]="'/tiguan'"  class="customButton zoomOwn mobile-size">Tìm hiểu
+          thêm</a>
+      </div>
+    </div> -->
+
+    <!-- tcross -->
+    <!-- <div class="mb-4">
+      <div class="card pb-2 pb-lg-0" style="background: rgb(241 229 214)">
+        <div class="text">
+          <h3 class="name" style="color:black;">Touareg</h3>
+        </div>
+        <img src="./assets/images/cate/touareg/lightbrown.png" alt="" class="icon">
+      </div>
+      <div style="text-align: center;">
+        <a [routerLink]="'/touareg'"  class="customButton zoomOwn mobile-size">Tìm hiểu
+          thêm</a>
+      </div>
+    </div> -->
+
+
+    <ng-container *ngFor="let pro of listProduct">
+      <div class="mb-4">
+        <a [href]="pro.link">
+          <div class="card pb-2 pb-lg-0" [style.background]="pro.bgColor">
+            <div class="text">
+              <h3 class="name">{{pro.Name}}</h3>
+            </div>
+            <img src="{{pro.ImageUrl}}" alt="" class="icon">
+          </div>
+        </a>
+        <div style="text-align: center;">
+          <!-- <a [routerLink]="pro.link" class="customButton zoomOwn mobile-size">Tìm hiểu
+            thêm</a> -->
+          <div *ngIf="pro.Name !== 'New Teramont X'" >
+            <a *ngIf="pro.Name !== 'Viloran'" [href]="pro.link" class="customButton zoomOwn mobile-size">Tìm hiểu
+              thêm</a> 
+  
+              <a *ngIf="pro.Name === 'Viloran'" [href]="pro.link" class="customButton zoomOwn mobile-size">Chính thức nhận đặt hàng</a> 
+          </div>
+          <div *ngIf="pro.Name === 'New Teramont X'" >
+              <a [href]="pro.link" class="customButton zoomOwn mobile-size">Chính thức nhận đặt hàng</a> 
+          </div>
+          </div>
+      </div>
+    </ng-container>
+    
+    <div class="mb-4">
+      <div class="card pb-2 pb-lg-0" style="border:none">
+        <!-- <div class="text">
+          <h3 class="name">T-Cross</h3>
+        </div>
+        <img src="./assets/images/cate/tcross/iconLuxury.png" alt="" class="icon"> -->
+      </div>
+      <!-- <div style="text-align: center;">
+        <a [href]="'/product/tcross'" class="customButton zoomOwn mobile-size">Tìm hiểu
+          thêm</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- ---------------------------------------------------------- -->
+<div id="news" class="news">
+  <h2 class="title">Tin tức - Khuyến mãi</h2>
+  <div class="wrapNewsItem">
+    <div class="newsItem ">
+      <div>
+        <img src="{{news.ImageUrl}}" alt="">
+      </div>
+      <div class="newsItemTitle">
+        Tin tức
+      </div>
+      <a [routerLink]="'/news/page/1'" class="mobile-size">
+        Tìm hiểu thêm</a>
+    </div>
+    <div class="newsItem ">
+      <div>
+        <img src="{{promotion.ImageUrl}}" alt="">
+      </div>
+      <div class="newsItemTitle">
+        Khuyến mãi
+      </div>
+      <a [routerLink]="'/promotion'" class="mobile-size">
+        Tìm hiểu thêm
+      </a>
+    </div>
+  </div>
+</div>
+<div class="orderOnline">
+  <h2 class="title">Đặt hàng online</h2>
+  <a [routerLink]="'/product/deposit'" class="btnOrder zoomOwn mobile-size">Đặt hàng ngay</a>
+</div>
+<div id="services" class="service">
+  <h2 class="title">Dịch vụ</h2>
+  <div class="wrapServiceItem">
+    <div class="serviceItem ">
+      <img src="./assets/images/service1.jpg" alt="">
+      <div class="serviceItemTitle">
+        Đặt hẹn dịch vụ
+      </div>
+      <a [routerLink]="'/product/service'" class="mobile-size">Tìm hiểu thêm</a>
+    </div>
+    <div class="serviceItem ">
+      <img src="./assets/images/service2.jpg" alt="">
+      <div class="serviceItemTitle">
+        Lái thử xe
+      </div>
+      <a [routerLink]="'/product/test-drive'" class="mobile-size">Đặt lịch hẹn ngay</a>
+    </div>
+    <div class="serviceItem ">
+
+      <img src="./assets/images/service3.jpg" alt="">
+
+      <div class="serviceItemTitle">
+        Mọi điều bạn cần biết về chiếc xe
+      </div>
+      <a href="/owner" class="mobile-size">Tìm hiểu thêm</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<div id="chatBubblesContainer">
+    <app-cart></app-cart>
+    <app-facebook-chat></app-facebook-chat>
+</div>

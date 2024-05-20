@@ -1,0 +1,84 @@
+<div></div>
+<img
+  src="./assets/images/owner/insurance-pc.webp"
+  alt=""
+  class="banner"
+  id="touaregBanner"
+/>
+
+<ng-container *ngFor="let item of content">
+  <app-category-main-title
+    *ngIf="item.component == 'app-category-main-title'"
+    [title]="item.title"
+    [description]="item.description"
+  ></app-category-main-title>
+</ng-container>
+
+<div class="recall-info container">
+  <div>
+    <p class="title">Thân gởi quý Khách hàng,</p>
+    <div class="content">
+      Chúng tôi xin chân thành cảm ơn quý khách hàng đã tin tưởng lựa chọn những
+      chiếc xe thương hiệu Volkswagen làm bạn đồng hành. Với sự tin tưởng đó,
+      chúng tôi luôn quan tâm đến chất lượng trên từng sản phẩm được bán ra và
+      cam kết sự an toàn của khách hàng luôn là ưu tiên hàng đầu.
+    </div>
+    <div class="content">
+      Việc thực hiện các chiến dịch triệu hồi thể hiện tinh thần trách nhiệm của
+      Volkswagen đối với sự an toàn của khách hàng đang sử dụng xe. Trường hợp
+      xe của quý khách nằm trong danh sách triệu hồi được công bố, chúng tôi rất
+      mong nhận được sự cảm thông và hợp tác tích cực từ phía khách hàng để các
+      chiến dịch được thực hiện nhanh chóng, đạt kết quả tốt nhất.
+    </div>
+    <div class="content">
+      Để thực hiện kiểm tra cho xe, quý khách có thể liên hệ đặt hẹn tại tất cả
+      các Đại lý được uỷ quyền trên toàn quốc, chúng tôi sẽ sắp xếp và chuẩn bị
+      chu đáo cho sự có mặt của quý khách hàng trong thời gian sớm nhất.
+    </div>
+    <div class="content">
+      <div>Trân trọng,</div>
+      <div>Volkswagen Việt Nam.</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="news-title">Tin tức triệu hồi</div>
+
+    <div class="news-list">
+      <div class="row news-item">
+        <div class="col-lg-4">
+          <img
+            src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/Touareg-PC.webp"
+            alt="image"
+            class="image"
+          />
+        </div>
+        <div class="col-lg-8">
+          <div class="news-content">
+            <div class="date">THỨ 2, 24 THÁNG NĂM 2021</div>
+            <div class="title">
+              <a routerLink="/owner/recall/1"
+                >THÔNG BÁO TRIỆU HỒI MẪU XE TOUAREG ĐỂ KIỂM TRA VÀ THAY THẾ BƠM
+                XĂNG</a
+              >
+            </div>
+            <div class="desc">
+              Từ ngày 31/08/2020 đến ngày 30/08/2022, Công ty Volkswagen Việt
+              Nam sẽ thực hiện triệu hồi mẫu xe Touareg thay thế tay đòn treo
+              dưới phía trước bên phải cho các xe bị ảnh hưởng, thông tin chi
+              tiết như sau: STT Nhãn hiệu Tên thương mại Mã model Năm sản […]
+            </div>
+            <div class="details">
+              <a routerLink="/owner/recall/1">CHI TIẾT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="next-page">
+      <span>TRANG SAU</span>
+    </div>
+  </div>
+</div>

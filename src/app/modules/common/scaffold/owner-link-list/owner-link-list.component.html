@@ -1,0 +1,12 @@
+<div class="container mt-100">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 mt-5" *ngFor="let item of items">
+            <a [href]="item.link.value" class="d-block">
+                <img [src]="item.image" alt="">
+            </a>
+            <a [href]="item.link.value" class="d-block link mt-3">
+                {{item.link.name}}
+            </a>
+        </div>
+    </div>
+</div>

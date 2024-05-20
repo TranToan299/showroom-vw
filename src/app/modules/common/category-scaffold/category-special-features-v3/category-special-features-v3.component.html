@@ -1,0 +1,35 @@
+<div class="container {{mt?'':'mt-100'}}" [style]="mt?'margin-top:'+mt:''"> 
+  <h1 class="text-center text-black font-weight-bold fs-title-cate" *ngIf="title">
+    {{title}}
+  </h1>
+  <div class="row mt-70">
+    <div class="col-12 col-md-7" *ngIf="images[0].type=='img'">
+      <img [src]="images[0].url" alt="">
+    </div>
+    <div class="col-12 col-md-7" *ngIf="images[0].type=='video'">
+      <video id="my_video_1" class="video-js vjs-default-skin" autoplay width="100%" controls 
+          data-setup='{ "aspectRatio":"3:2", "playbackRates": [1, 1.5, 2] }'>
+          <source
+              src="{{images[0].url}}"
+              type='video/mp4' />
+      </video>
+    </div>
+    <div class="col-12 col-md-5 ">
+      <div class="pl-0 pl-md-5">
+        <div class="mt-5 mt-md-0" *ngFor="let info of infos">
+          <p class="font-weight-bold fs-18">{{info.title}}</p>
+          <p class="text-body mt-3">{{info.value}}
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-12 col-md-3 mt-5">
+      <img [src]="images[1].url" alt="">
+    </div>
+    <div class="col-12 col-md-9 mt-5 ">
+      <img class="pl-md-5 pl-0" [src]="images[2].url" alt="">
+    </div>
+  </div>
+
+</div>

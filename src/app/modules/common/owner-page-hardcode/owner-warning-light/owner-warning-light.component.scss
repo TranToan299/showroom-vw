@@ -1,0 +1,82 @@
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.video-container {
+    max-height: 650px;
+}
+
+.wrap {
+    .margin-top {
+        margin-top: 300px;
+    }
+
+    .mainTitle {
+        font-size: 62px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .link {
+        display: inline-block;
+        color: rgb(0 30 80);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .link:hover {
+        background-color: rgb(236, 242, 250)
+    }
+
+}
+
+
+@media only screen and (max-width:1300px) {
+    .wrap {
+        .margin-top {
+            margin-top: 200px;
+        }
+
+        .mainTitle {
+            font-size: 48px;
+            line-height: 48px
+        }
+
+        .description {
+            font-size: 24px;
+            line-height: 25px;
+        }
+    }
+}
+
+
+@media only screen and (max-width:860px) {
+    .wrap {
+        .margin-top {
+            margin-top: 160px;
+        }
+
+        .mainTitle {
+            font-size: 32px;
+            line-height: 33px;
+        }
+
+        .description {
+            font-size: 20px;
+            line-height: 21px;
+        }
+    }
+}

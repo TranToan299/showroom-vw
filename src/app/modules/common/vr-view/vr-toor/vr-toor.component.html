@@ -1,0 +1,32 @@
+<div class="full-screen">
+    <div #container></div>
+    <!-- <div class="left-menu" (click)="changeSun()">
+        <span *ngIf="isDay"><img src="/assets/icon/sun.png" width="32" height="32" ></span>
+        <span *ngIf="!isDay"><img src="/assets/icon/moon.png" width="32" height="32" ></span>
+    </div> -->
+    <div class="right-menu">
+        <ul>
+            <li (click)="changeScene(item)" *ngFor="let item of sceneCategory">
+                <p>{{item}}</p>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="function">
+        <div class="btn-back" (click)="goHome()">
+            <p><span><i class="fa fa-arrow-left"></i></span> Trang chủ</p>
+        </div>
+    </div> -->
+    <!-- <div class="auto-play" (click)="autoRotate()">
+        <span *ngIf="isPlay"><i class='fa fa-play'></i></span>
+        <span *ngIf="!isPlay"><i class='fa fa-pause'></i></span>
+    </div> -->
+    <div class="pagenation">
+        <div [ngStyle]="{ 'cursor':isLoading ? 'none' : 'pointer'}" class="button-prev" (click)="prevClick()"><span><i
+                    class="fa fa-angle-left"></i></span></div>
+        <!-- <div class="scene">{{index}}</div> -->
+        <div [ngStyle]="{ 'cursor':isLoading ? 'none' : 'pointer'}" class="button-next" (click)="nextClick()"><span><i
+                    class="fa fa-angle-right"></i></span></div>
+    </div>
+    <div #annotation></div>
+    <p-progressSpinner [style]="{width: '50px', height: '50px'}" *ngIf="isLoading"></p-progressSpinner>
+</div>

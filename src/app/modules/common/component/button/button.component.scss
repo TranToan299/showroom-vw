@@ -1,0 +1,41 @@
+// Screen
+$mobile-width: 575.98px;
+$tablet-width: 991.98px;
+$desktop-width: 1024.98px;
+$large-desktop-width: 1281px;
+
+@mixin tablet {
+   @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+      @content;
+   }
+}
+
+@mixin mobile {
+   @media only screen and (max-width: $mobile-width) {
+      @content;
+   }
+}
+
+.app-btn{
+   font-size: 16px;
+   padding: 4px 30px;
+   min-width: 100px !important;
+   color: #001E50;
+   border: 1px solid #001E50;
+   border-radius: 20px;
+   background: #fff;
+   &-secondary{
+      color: #fff;
+      background: #001E50;
+   }
+   &-medium{
+      
+   }
+
+   // @include tablet() {
+   //       font-size: 24px;
+   //          padding: 14px 50px;
+   //          border-radius: 35px;
+          
+   // }
+}

@@ -1,0 +1,41 @@
+.list-info{
+  list-style: none;
+  .item-info{
+    display: flex;
+    &::before{
+      content: '';
+      display: inline-block;
+      min-width: 15px;
+      height: 2px;
+      background: black;
+      margin-right: 15px;
+      position: relative;
+      top: 13px;
+    }
+  }
+}
+:host ::ng-deep .p-accordion-header-link{
+  text-decoration: none;
+}
+
+// custome accordion
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link{
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  
+} 
+::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link{
+  background: transparent;
+  border-bottom: none;
+} 
+::ng-deep .p-accordion .p-accordion-content{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+} 
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link,::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link{
+  font-weight: 700;
+  color:#000;
+} 

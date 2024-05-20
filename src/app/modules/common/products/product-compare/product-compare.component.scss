@@ -1,0 +1,56 @@
+.wrap{
+  padding-top: 100px;
+  .choose{
+    display: flex;
+    justify-content: center;
+    .choose-item{
+      width: 200px;
+      // max-width: 20vw;
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+} 
+.list-group{
+  .disabled{
+    opacity: 0.5;
+  }
+}
+.wrap-btn-close{
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+
+:host ::ng-deep .p-accordion-header-link{
+  text-decoration: none;
+}
+:host ::ng-deep .p-accordion-content{
+  overflow-x: auto;
+}
+@media only screen and (max-width:576px){
+  .wrap{
+    padding-top: 50px;
+    .choose{
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+  th,td{
+    font-size: 14px!important;
+    min-width: 200px;
+  }
+
+}

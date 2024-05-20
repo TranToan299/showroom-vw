@@ -1,0 +1,196 @@
+<nav id="navbar" class="animate__animated animate__fadeInDown">
+  <div class="bottom">
+    <div class="background animate__animated animate__fadeInDown gradient-background"></div>
+    <div class="line-left"></div>
+    <a class="logo-center" [routerLink]="'/'">
+      <img class="logo-mobile" style="z-index: 555;" src="./assets/images/logoWhite.svg" />
+    </a>
+    <div class="line-right"></div>
+  </div>
+  <div class="wrapBtn">
+    <img
+      src="./assets/images/menuWhite.svg"
+      alt=""
+      id="btnMenu"
+      (click)="openMenu()"
+    />
+  </div>
+</nav>
+<div id="menu" class="">
+  <div class="btnCloseMenu">
+    <div (click)="closeMenu()" style="cursor: pointer">
+      <img
+        src="./assets/images/close.svg"
+        alt=""
+        style="margin-right: 10px; width: 18px; height: 18px"
+        class="closeMenu"
+      />
+      Đóng
+    </div>
+  </div>
+  <div class="menuBody">
+    <div class="colL">
+      <div>
+        <a
+          (click)="openSubmenu($event)"
+          class="item-link"
+          data-submenu="product"
+          >Sản phẩm <i class="pi pi-chevron-right ml-2"></i
+        ></a>
+      </div>
+      <div>
+        <a class="item-link" [routerLink]="'/product/deposit'"
+          >Đặt hàng sản phẩm</a
+        >
+      </div>
+      <div>
+        <a class="item-link" [routerLink]="'/news/page/1'">Tin tức</a>
+      </div>
+      <div>
+        <a class="item-link" [routerLink]="'/promotion'">Khuyến mãi</a>
+      </div>
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/aboutus.html"
+          >Về chúng tôi</a
+        >
+      </div>
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/contact.html"
+          >Liên hệ</a
+        >
+      </div>
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html"
+          >Hệ thống đại lý</a
+        >
+      </div>
+      <!-- <div>
+        <a
+          (click)="openSubmenu($event)"
+          class="item-link"
+          data-submenu="own-user"
+          >Chủ sở hữu và người dùng <i class="pi pi-chevron-right ml-2"></i
+        ></a>
+      </div> -->
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/owner.html"
+          >Chủ sở hữu và người dùng</a
+        >
+      </div>
+      <div>
+        <a class="item-link" [routerLink]="'/product/test-drive'">Lái thử xe</a>
+      </div>
+      <div>
+        <a class="item-link" [routerLink]="'/product/service'"
+          >Đặt hẹn dịch vụ</a
+        >
+      </div>
+
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/faq.html">FAQ</a>
+      </div>
+      <div>
+        <a class="item-link" href="https://www.vw.com.vn/vi/emobility.html"
+          >E- Mobility & ID</a
+        >
+      </div>
+    </div>
+    <div class="sepa"></div>
+    <div class="colR">
+      <div class="titleTopLink">Liên kết hàng đầu</div>
+      <div>
+        <a [routerLink]="'/product/service'">Đặt hẹn dịch vụ</a>
+      </div>
+      <div>
+        <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html"
+          >Hệ thống đại lý</a
+        >
+      </div>
+      <div>
+        <a href="/product/test-drive"
+          >Đăng ký lái thử</a
+        >
+      </div>
+      <div>
+        <a href="/product/compare"
+          >So sánh sản phẩm</a
+        >
+      </div>
+      <div>
+        <a href="/product/cost"
+          >Chi phí lăn bánh</a
+        >
+      </div>
+      <!-- <div>
+        <a [routerLink]="'/product/test-drive'">Lái thử xe</a>
+      </div> -->
+
+      <!-- <img src="./assets/images/seePhone.svg" alt="" class="imgSeePhone" /> -->
+      <div class="contact">Liên hệ với chúng tôi</div>
+      <div class="contactContent">
+        <a href="tel:1900292998">Hotline: 1900 292998</a>
+      </div>
+    </div>
+  </div>
+  <div class="menuBody">
+    <div class="menuNavi" style="position: absolute; bottom: 40px">
+      <a href="https://www.vw.com.vn/vi/imprint.html" class="menuNaviItem"
+        >Imprint</a
+      >
+      <div class="sepaHori">|</div>
+      <a href="/legal" class="menuNaviItem"
+        >Pháp lý</a
+      >
+      <div class="sepaHori">|</div>
+      <a href="https://www.vw.com.vn/vi/cookies.html" class="menuNaviItem"
+        >Cookies</a
+      >
+    </div>
+  </div>
+</div>
+<div id="submenu">
+  <div class="colL">
+    <div class="wrapBtnClose p-2" (click)="closeMenu()">
+      <i class="pi pi-times" style="font-size: 1.5rem"></i>
+    </div>
+  </div>
+  <div class="colR">
+    <div class="comeback">
+      <div class="wrapBtnComeback py-2" (click)="closeSubmenu()">
+        <i class="pi pi-arrow-left mr-2"></i>
+        Quay lại
+      </div>
+    </div>
+    <div class="item-name">{{ submenu.name }}</div>
+    <div style="display: flex">
+      <div class="colR-half">
+        <div *ngFor="let link of submenu.links">
+          <a
+            href="{{ link.link === '/owner' ? 'https://www.vw.com.vn/vi/owner.html' : link.link }}"
+            class="item-link"
+            *ngIf="link.link && !link.own"
+            >{{ link.name }}</a
+          >
+          <a
+            [routerLink]="link.link"
+            class="item-link"
+            *ngIf="link.link && link.own"
+            >{{ link.name }}</a
+          >
+
+          <div class="item-link" *ngIf="!link.link" (click)="openDeepSubmenu()">
+            {{ link.name }}
+            <i class="pi pi-angle-right ml-2"></i>
+          </div>
+        </div>
+      </div>
+      <div class="colR-half pl-2">
+        <div *ngFor="let link of deepSubmenu">
+          <a href="{{ link.link }}" class="item-link" *ngIf="link.link">{{
+            link.name
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

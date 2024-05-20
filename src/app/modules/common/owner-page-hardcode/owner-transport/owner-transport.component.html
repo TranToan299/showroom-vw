@@ -1,0 +1,75 @@
+<div class="wrap">
+    <div class="row align-items-center">
+        <div class="col-12 col-sm-6 col-lg-6 col-xl-6" id="bannerTransportContainer">
+            <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/transport-1.webp" alt=""
+                id="bannerTransport">
+            <div class="overlay mobile-content">
+                <h2 class="title mainTitleWhite">Phụ kiện hổ trợ vận chuyển của Volkswagen</h2>
+            </div>
+        </div>
+        <!-- <div class="col-12 col-12 col-sm-6 col-lg-6 col-xl-6 d-flex justify-content-start mainTitleWhite" style="flex-direction: column; padding:50px;">
+            <h2 class="title">Phụ kiện hổ trợ vận chuyển của Volkswagen</h2>
+        </div> -->
+        <div class="col-12 col-12 col-sm-5 col-lg-5 col-xl-5 d-flex justify-content-start"
+            style="flex-direction: column; padding:50px;">
+            <h2 class="title mainTitle">Phụ kiện hổ trợ vận chuyển của Volkswagen</h2>
+            <p>Với các phụ kiện phụ kiện hỗ trợ vận chuyển của chúng tôi, bạn có thể tạo không gian riêng cho mình.</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mt-100">
+        <div class="col-10 col-sm-10 col-lg-6 col-xl-6 d-flex justify-content-start"
+            style="flex-direction: column;">
+            <h2 class="title titleLeft">Móc kéo</h2>
+            <p style="margin-top:20px;">Cung cấp đa dạng các móc kéo từ loại móc kéo cứng cứng, loại vặn hoặc có thể gập, cung cấp cho bạn sự hỗ
+                trợ tốt nhất</p>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-8 col-xl-8 d-flex justify-content-start"
+            style="flex-direction: column; margin-top:50px;">
+            <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/transport-2.webp" alt="">
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mt-100">
+        <div class="col-12 col-sm-6 col-lg-6 col-xl-6 d-flex justify-content-start"
+            style="flex-direction: column; padding:50px;">
+            <h2 class="title titleLeft">Giải pháp cho khoang hành lý</h2>
+            <p>Bảo vệ hiệu quả chống lại bụi bẩn và độ ẩm. Từ sàn chống trơn trượt đến vách ngăn lưới: Khám phá các giải
+                pháp dành cho khoang hành lý mang tính ứng dụng cao của chúng tôi.</p>
+            <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="link">Tìm đại lý ủy quyền của
+                Volkswagen</a>
+        </div>
+    </div>
+
+
+    <div class="row" style="justify-content:space-evenly; margin-top:70px;">
+        <div class="col-12 col-sm-12 col-lg-6 col-xl-6" style="margin-bottom:20px;">
+            <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/transport-3.webp" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+            <div style="max-width: 1024px;">
+                <div id="instructions" style="margin-bottom: 30px;">
+                    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="none"
+                        poster='https://vw-image.s3.ap-southeast-1.amazonaws.com/video/transport-4.webp'
+                        data-setup='{ "aspectRatio":"3:2", "playbackRates": [1, 1.5, 2] }'>
+                        <source
+                            src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/Ph%E1%BB%A5+ki%E1%BB%87n+ch%C3%ADnh+h%C3%A3ng+cho+b%E1%BA%A1n+v%C3%A0+xe+VW+%C4%91%C3%A3+%C4%91%C6%B0%E1%BB%A3c+trang+b%E1%BB%8B+-+Volkswagen+Vi%E1%BB%87t+Nam_2.mp4"
+                            type='video/mp4' />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-100">
+        <app-owner-reference *ngIf="this.reference" [title]="reference.title" [description]="reference.description"
+            [link]="reference.link">
+        </app-owner-reference>
+    </div>
+</div>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

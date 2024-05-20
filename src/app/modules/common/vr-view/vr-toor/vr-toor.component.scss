@@ -1,0 +1,153 @@
+#container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.pagenation {
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  display: flex;
+  left: 10px;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.4;
+  // margin-left: -50px;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+}
+
+.auto-play{
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 10px;
+  margin: 5px;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 32px;
+  color : #fff;
+}
+
+.pagenation .center{
+  text-align: center;
+}
+
+.function {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+.btn-back {
+  color: white;
+  border: 1px solid #fff;
+  // border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  color: #0c4497;
+  background-color: #fff;
+}
+
+.full-screen {
+  position: relative;
+}
+
+.button-prev {
+  padding: 5px;
+  // border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.scene {
+  font-size: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  // font-weight: 500;
+}
+
+.button-next {
+  z-index: 1;
+  padding: 5px;
+  // border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.annotation{
+  z-index: 1;
+}
+
+
+
+p-progressSpinner{
+  position: absolute;
+  z-index: 2;
+  left: 50vw;
+  top: 50vh;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+
+.right-menu{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 150px;
+  // border: 1px solid #fff;
+  // color: #fff;
+}
+
+.right-menu ul li {
+  list-style: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 5px;
+  // border: 1px solid #fff;
+  background-color:rgba(255, 255, 255, 0.753);
+  color: #0c4497;
+}
+
+.right-menu ul li:hover{
+  background-color: #0c4497;
+  color: #fff;
+}
+
+
+.left-menu{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  
+}
+
+.left-menu span{
+  cursor: pointer;
+  border-radius: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.left-menu span img{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top:10px;
+  left:0;
+}

@@ -1,0 +1,271 @@
+<div class="wrap">
+  <div class="container">
+    <div class="row list-image">
+      <ng-container *ngFor="let cate of listCate; let i = index">
+        <div class="col-6 col-md-3 listCar">
+          <div
+            class="list-image-item  mt-2 {{ i == 0 ? 'active' : '' }}"
+            (click)="clickCate($event)"
+            [attr.data-index]="i"
+          >
+            <img src="{{ cate.ImageUrl }}" alt="" class="car-img" />
+            <h5 class="text-center">
+              <strong>{{ cate.Name }}</strong>
+            </h5>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row detail mt-5" *ngIf="objProduct.products.length">
+      <div class="col-12 col-md-6 order-3 order-md-1">
+        <img
+          src="{{
+            objProduct.product.colorsExterior[objProduct.IndexInColorsExterior]
+              .image
+          }}"
+          alt=""
+        />
+      </div>
+      <div class="col-12 col-md-6 info order-2">
+        <h3 class="text-center">{{ objProduct.product.Name }}</h3>
+        <p-divider></p-divider>
+        <div class="price">
+          <div class="mt-4 d-flex justify-content-center">
+            <div>Giá công bố</div>
+            <div class="price-value">
+              {{ formatMoney(objProduct.product.Price) }} ₫
+            </div>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <div>Số tiền đặt cọc</div>
+            <div class="price-value" style="color: #28a745">
+              {{ formatMoney(objProduct.product.Deposit) }} ₫
+            </div>
+          </div>
+        </div>
+        <div class="version">
+          <div class="font-weight-bold text-center mt-3" style="color: #212529">
+            Lựa chọn phiên bản xe
+          </div>
+          <div class="d-flex justify-content-center">
+            <div
+              *ngFor="let pro of objProduct.products; let i = index"
+              class="version-option-item"
+              [attr.data-index]="i"
+              (click)="clickVersion($event)"
+              class="version-item {{ i == 0 ? 'active' : '' }}"
+            >
+              {{ pro.Version }}
+            </div>
+          </div>
+        </div>
+        <div class="color">
+          <div
+            class="font-weight-bold text-center mt-3"
+            style="color: #212529"
+            style="color: #212529"
+          >
+            Lựa chọn màu ngoại thất
+          </div>
+          <div class="d-flex justify-content-center">
+            <div
+              *ngFor="
+                let color of objProduct.product.colorsExterior;
+                let i = index
+              "
+            >
+              <div
+                class="color-item  exterior-color {{
+                  i == objProduct.IndexInColorsExterior ? 'active' : ''
+                }} "
+                [attr.data-index]="i"
+                (click)="clickExterior($event)"
+                [style.backgroundColor]="color.color"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dealer -->
+    <div class="row form justify-content-center mt-5">
+      <h3 class="col-12 text-center">Lựa chọn showroom mua xe</h3>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block"
+            >Tỉnh thành <span class="required">*</span></label
+          >
+          <p-dropdown
+            id="province"
+            [options]="objDealer.provinces"
+            [(ngModel)]="objDealer.province"
+            [showClear]="true"
+            [filter]="true"
+            optionLabel="name"
+            optionValue="code"
+            [style]="{ width: '100%' }"
+            placeholder="Chọn tỉnh thành"
+          >
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block"
+            >Showroom/Đại lý<span class="required">*</span></label
+          >
+          <p-dropdown
+            id="dealer"
+            [options]="objDealer.dealers[objDealer.province]"
+            [(ngModel)]="objDealer.dealer"
+            [showClear]="true"
+            [filter]="true"
+            optionLabel="name"
+            optionValue="Id"
+            [style]="{ width: '100%' }"
+            placeholder="Chọn đại lý"
+            (onChange)="changeDropdownDeader($event)"
+          >
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Số điện thoại </label>
+          <input
+            [disabled]="true"
+            type="text"
+            pInputText
+            [(ngModel)]="objDealer.phone"
+            [style]="{ width: '100%' }"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Email<span class="required">*</span></label>
+          <input
+            [disabled]="true"
+            type="text"
+            pInputText
+            [(ngModel)]="objDealer.email"
+            [style]="{ width: '100%' }"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- checkbox -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-12 col-sm-10 col-lg-8 d-flex align-items-baseline">
+        <p-checkbox
+          name="commit"
+          value="commit"
+          label="Tôi cam kết các thông tin đã cung cấp tại đây hoàn toàn chính xác."
+          [(ngModel)]="checkboxs"
+        >
+        </p-checkbox>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8 d-flex align-items-baseline">
+        <p-checkbox
+          name="read"
+          value="read"
+          [(ngModel)]="checkboxs"
+          inputId="checkDepositTerms"
+        >
+        </p-checkbox>
+        <label for="checkDepositTerms" class="mb-0 ml-2 d-inline-block"
+          >Tôi đã đọc, hiểu rõ và xác nhận đồng ý với toàn bộ nội dung
+          <a
+            href="./assets/VW_Dieu_Khoan_Mua_Ban.pdf"
+            style="display: inline-block; color: #2552ff; font-weight: 500"
+            target="_blank"
+            >Điều khoản
+          </a>
+          trong Thỏa Thuận Đặt Cọc trên cũng như Chính Sách Ưu Đãi áp dụng tại
+          thời điểm đặt mua xe ô tô này trên Volkswagen Việt Nam.
+        </label>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8 d-flex align-items-baseline">
+        <p-checkbox
+          name="agree"
+          value="agree"
+          [(ngModel)]="checkboxs"
+          inputId="checkOnlineTerms"
+        >
+        </p-checkbox>
+        <label for="checkOnlineTerms" class="mb-0 ml-2 d-inline-block"
+          >Tôi đồng ý với các
+          <a
+            href="/legal"
+            style="display: inline-block; color: #2552ff; font-weight: 500"
+            target="_blank"
+            >Điều kiện & Điều khoản
+          </a>
+          của Volkswagen Việt Nam.</label
+        >
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <p-dialog
+      [(visible)]="displayBook"
+      [style]="{ width: '50%' }"
+      [closable]="false"
+    >
+      <ng-container>
+        <h2 class="text-center">Thêm vào giỏ hàng thành công</h2>
+        <h2 class="text-center mb-2">Bạn có muốn tiến hành đặt hàng ?</h2>
+      </ng-container>
+
+      <ng-template pTemplate="footer">
+        <div class="row justify-content-center" style="margin: 20px 0 20px 0">
+          <div
+            class="btnWhite col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="hideBookDialog()"
+          >
+            Đóng
+          </div>
+          <div
+            class="btnBlue col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="showBookDialog()"
+          >
+            Đặt hàng
+          </div>
+        </div>
+      </ng-template>
+    </p-dialog>
+
+    <div class="row justify-content-center my-5">
+      <button type="button" (click)="handleBook()" class="btnBlue" label="Show">
+        Đặt hàng
+      </button>
+    </div>
+  </div>
+  <div class="toast-thank hidden">
+    <div class="content">
+      <div class="logo">
+        <img src="./assets/images/logoBlue.svg" alt="" width="100" />
+      </div>
+      <div class="text-thank">
+        Cám ơn bạn đã lựa chọn dòng xe <span>Volkswagen</span>
+      </div>
+      <div class="will">
+        Đại lý chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.
+      </div>
+      <div class="text-thank2">Trân trọng cám ơn!</div>
+      <div class="name">Volkswagen Việt Nam</div>
+      <div class="wrap-btnBlue">
+        <a [routerLink]="'/'" class="btnBlue">Trở về trang chủ</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast-container">
+  <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-menu-right></app-menu-right>
+<app-cart cartBook="{{ cartBook }}"></app-cart>
+<app-facebook-chat></app-facebook-chat>

@@ -1,0 +1,47 @@
+<div class="product-banner__container" [id]="id">
+    <div class="product-banner"
+        [style.background-image]="isMobile && bannerMobile ? 'url(' + bannerMobile + ')' : 'url(' + banner + ')'">
+        <div class="container">
+            <div class="product-banner__content">
+                <p class="product-banner__subtitle">{{subtitle}}</p>
+                <p class="product-banner__title">{{title}}</p>
+                <div class="product-banner__expandable__container" (click)="togglePanelExterior()">
+                    <div class="product-banner__expandable__icon mr-2">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                    <p class="product-banner__expandable__text">
+                        Tìm hiểu thêm
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Description -->
+    <div *ngIf="isExpandedExterior" class="container my-5" [id]='idBanner'>
+        <div class="product-banner__expandable__icon product-banner__expandable__icon--close mb-5"
+            (click)="togglePanelExterior()">
+            <i class="fa fa-close"></i>
+        </div>
+        <app-category-tab-horizontal [title]="title"
+             [content]="listInfo"></app-category-tab-horizontal>
+
+        <!-- <p-carousel [autoplayInterval]="200000" [value]="listInfo">
+            <ng-template let-itemInfo pTemplate="itemInfo">
+                <div class="row align-items-center justify-content-center align-items-center">
+                    <div class="col-md-8">
+                       
+                        <img *ngIf="!itemInfo.isVideo" class="product-banner__carou-image" [src]="itemInfo.ImageUrl" [alt]="'viloran'" />
+                        <video controls *ngIf="itemInfo.isVideo" autoplay loop>
+                            <source [src]="itemInfo.ImageUrl" type="video/mp4">  
+                        </video>
+                    </div>
+                </div>
+                <h4 class="m-3">{{itemInfo.title}}</h4>
+                <ul *ngIf="itemInfo.content.length > 0">
+                    <li *ngFor="let item of itemInfo.content">{{ item }}</li>
+                </ul>
+            </ng-template>
+            
+        </p-carousel> -->
+    </div>
+</div>

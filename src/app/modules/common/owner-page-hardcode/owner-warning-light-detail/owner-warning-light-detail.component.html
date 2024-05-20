@@ -1,0 +1,26 @@
+<div class="wrap">
+    <div class="row justify-content-center">
+        <div class="col-10 col-sm-10 col-lg-7 col-xl-7" style="text-align: center; margin-top:200px;">
+            <h2 class="mainTitle">{{this.content.title}}</h2>
+            <h3 class="title">{{this.content.subTitle}}</h3>
+        </div>
+    </div>
+    <div class="row mt-100 justify-content-around">
+        <div class="col-10 col-sm-10 col-lg-5 col-xl-5" style="margin-bottom:40px;">
+            <img src="{{this.content.image}}" alt="">
+        </div>
+        <div class="col-10 col-sm-10 col-lg-5 col-xl-5">
+            <div *ngFor="let item of content.content">
+                <div style="margin-bottom:8px;">
+                    <p class="description"><b>{{item.header}} </b>{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

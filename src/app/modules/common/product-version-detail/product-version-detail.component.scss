@@ -1,0 +1,38 @@
+.product-version {
+  &__name {
+    font-size: 56px;
+    font-weight: bold;
+    color: #000;
+
+    @media only screen and (max-width: 576px) {
+      font-size: 24px;
+    }
+  }
+
+  &__price {
+    font-size: 22px;
+    color: #999;
+    @media only screen and (max-width: 576px) {
+      font-size: 16px;
+    }
+  }
+
+  &__item {
+    &__text {
+      font-size: 22px;
+      color: #999;
+      @media only screen and (max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      color: #000;
+      font-weight: bold;
+      @media only screen and (max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+  }
+}

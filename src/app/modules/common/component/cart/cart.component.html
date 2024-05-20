@@ -1,0 +1,479 @@
+<div class="wrap" style="z-index: 100002">
+  <div class="container">
+    <!-- Step 1 Modal -->
+    <p-dialog
+      [(visible)]="display"
+      [style]="{ width: '90%' }"
+      [closable]="false"
+    >
+      <ng-template pTemplate="header">
+        <div style="width: 100%">
+          <div (click)="hideDialog()" class="xBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+
+          <h2 class="text-center col-12">Thông tin đặt hàng</h2>
+          <p class="text-center">
+            Qúy khách vui lòng kiểm tra lại thông tin trước khi thực hiện thanh
+            toán.
+          </p>
+          <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+        </div>
+      </ng-template>
+      <ng-container *ngFor="let item of this.OrderDetails; index as i">
+        <div class="separator"></div>
+        <div style="width: 100%">
+          <h3 class="supHeader" style="padding-left: 15px">
+            <div>
+              THÔNG TIN SẢN PHẨM
+              <span class="gray-text smallHeader">{{ item.ProductName }} </span>
+              <!-- <span>
+                <input
+                  (change)="handleCheck(item)"
+                  type="checkbox"
+                  value="{item}"
+                />
+              </span> -->
+            </div>
+            <div>
+              <!-- <i
+                (click)="handleDelete(item)"
+                class="fa-solid fa-trash trashIcon"
+              ></i> -->
+              <i
+                (click)="handleDelete(item)"
+                class="fa-solid fa-xmark trashIcon"
+              ></i>
+            </div>
+          </h3>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Mẫu xe</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.ProductName }}</span>
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Phiên bản</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.Version }}</span>
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Giá cọc</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text"
+                    >{{ formatMoney(item.Deposit) }}đ</span
+                  >
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Email liên hệ</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.Dealer.email }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Màu ngoại thất</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">
+                    {{ item.ExteriorColor }}
+                  </span>
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Màu nội thất</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.InteriorColor }}</span>
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">Đại lý</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.Dealer.name }}</span>
+                </div>
+              </div>
+              <div class="row mtb5">
+                <div class="col-12 col-sm-6">
+                  <span class="bold-text">SĐT đại lý</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <span class="gray-text">{{ item.Dealer.phone }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template pTemplate="footer">
+        <div class="row justify-content-center" style="margin: 20px 0 20px 0">
+          <div
+            class="btnWhite col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="hideDialog()"
+          >
+            Đóng
+          </div>
+          <div
+            class="btnBlue col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="showDialog2()"
+          >
+            Tiếp theo
+          </div>
+        </div>
+      </ng-template>
+    </p-dialog>
+
+    <!-- End step 1  -->
+
+    <!-- Step 2 Modal -->
+    <p-dialog
+      [(visible)]="display2"
+      [style]="{ width: '90%' }"
+      [closable]="false"
+    >
+      <ng-template pTemplate="header">
+        <div style="width: 100%">
+          <div (click)="hideDialog2()" class="xBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+
+          <h2 class="text-center col-12">Thông tin đặt hàng</h2>
+          <p class="text-center">
+            Qúy khách vui lòng kiểm tra lại thông tin trước khi thực hiện thanh
+            toán.
+          </p>
+          <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+        </div>
+      </ng-template>
+
+      <div class="separator"></div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-12">
+          <div class="row form justify-content-center mt-5">
+            <h3 class="col-12 col-sm-10 col-lg-8 supHeader">
+              THÔNG TIN KHÁCH HÀNG
+            </h3>
+            <div class="col-12 col-sm-10 col-lg-8">
+              <div class="field mt-3">
+                <label for="typeCustomer" class="d-block"
+                  >Quý khách là? <span class="required">*</span></label
+                >
+                <p-dropdown
+                  id="typeCustomer"
+                  [options]="objCustomer.typeCustomers"
+                  [(ngModel)]="objCustomer.typeCustomer"
+                  [showClear]="true"
+                  [style]="{ width: '100%' }"
+                  optionLabel="name"
+                  optionValue="code"
+                  placeholder="Chọn"
+                >
+                </p-dropdown>
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-12 col-sm-5 col-lg-4">
+              <div class="field mt-3">
+                <label for="name" class="d-block"
+                  >Họ tên cá nhân <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  pInputText
+                  [(ngModel)]="objCustomer.name"
+                  [style]="{ width: '100%' }"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-lg-4">
+              <div class="field mt-3">
+                <label for="identityCard" class="d-block"
+                  >CMND/CCCD <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="identityCard"
+                  pInputText
+                  [(ngModel)]="objCustomer.identityCard"
+                  [style]="{ width: '100%' }"
+                />
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-12 col-sm-5 col-lg-4">
+              <div class="field mt-3">
+                <label for="phone" class="d-block"
+                  >Số điện thoại <span class="required">*</span></label
+                >
+                <p-inputMask
+                  id="phone"
+                  [style]="{ width: '100%' }"
+                  mask="9999 999 999"
+                  [(ngModel)]="objCustomer.phone"
+                >
+                </p-inputMask>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-lg-4">
+              <div class="field mt-3">
+                <label for="email" class="d-block"
+                  >Email <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  pInputText
+                  [(ngModel)]="objCustomer.email"
+                  [style]="{ width: '100%' }"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-10 col-lg-8">
+              <div class="field mt-3">
+                <label for="note" class="d-block"
+                  >Ghi chú: <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  pInputText
+                  [(ngModel)]="objCustomer.note"
+                  [style]="{ width: '100%' }"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8 mt-5">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="supHeader">SHOWROOM MUA XE</h3>
+            </div>
+            <!-- <div class="col-12 col-sm-6">
+                        <div class="row mtb5 justify-content-center">
+                            <div class="col-12 col-sm-6">
+                                <span class="bold-text">Tỉnh thành</span>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <span class="gray-text"> this.objDealer.province </span>
+                            </div>
+                        </div>
+                        <div class="row mtb5 justify-content-center">
+                            <div class="col-12 col-sm-6">
+                                <span class="bold-text">Showroom đại lý</span>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <span class="gray-text"> this.objDealer.name </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="row mtb5 justify-content-center">
+                            <div class="col-12 col-sm-6">
+                                <span class="bold-text">Nhân viên tư vấn</span>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <span class="gray-text"></span>
+                            </div>
+                        </div>
+                        <div class="row mtb5 justify-content-center">
+                            <div class="col-12 col-sm-6">
+                                <span class="bold-text">Mã giới thiệu</span>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <span class="gray-text"></span>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <div class="col-12 col-sm-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row mtb5">
+                    <div class="col-12 col-sm-6">
+                      <span class="bold-text">Tỉnh thành</span>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <span class="gray-text">{{
+                        this.objDealer.province
+                      }}</span>
+                    </div>
+                  </div>
+                  <div class="row mtb5">
+                    <div class="col-12 col-sm-6">
+                      <span class="bold-text">Showroom đại lý</span>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <span class="gray-text">{{ this.objDealer.name }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row mtb5">
+                    <div class="col-12 col-sm-6">
+                      <span class="bold-text">Email đại lý</span>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <span class="gray-text">{{ this.objDealer.email }}</span>
+                    </div>
+                  </div>
+                  <div class="row mtb5">
+                    <div class="col-12 col-sm-6">
+                      <span class="bold-text">SĐT liên lạc</span>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <span class="gray-text">{{ this.objDealer.phone }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="supHeader">
+                THÀNH TIỀN: {{ formatMoney(this.totalPrice) }}đ
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="col-12 col-sm-10 col-lg-8 mt-5">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="supHeader">HÌNH THỨC THANH TOÁN</h3>
+            </div>
+            <div class="col-12" style="display: flex; align-items: baseline">
+              <p-radioButton
+                name="pay"
+                value="thanh toán qua chuyển khoản ngân hàng"
+                [(ngModel)]="pay"
+                inputId="bankTransfer"
+                label="Thanh toán qua chuyển khoản ngân hàng"
+              >
+              </p-radioButton>
+              <!-- <label for="bankTransfer" class="mb-0 ml-2 d-inline-block no-p-margin">
+                                <p style="margin-bottom: 5px">
+                                    Thanh toán qua chuyển khoản ngân hàng.
+                                </p>
+                                <p style="padding-left: 8px" class="mb-0 font-small">
+                                    *Ngân hàng:{{ this.bankAccountInfo[0].bank }}
+                                </p>
+                                <p style="padding-left: 15px" class="mb-0 font-small">
+                                    Tên TK:{{ this.bankAccountInfo[0].name }}
+                                </p>
+                                <p style="padding-left: 15px; margin-bottom: 5px" class="mb-0 font-small">
+                                    Số TK:{{ this.bankAccountInfo[0].accNum }}
+                                </p>
+
+                                <p style="padding-left: 8px" class="mb-0 font-small">
+                                    *Ngân hàng:{{ this.bankAccountInfo[1].bank }}
+                                </p>
+                                <p style="padding-left: 15px" class="mb-0 font-small">
+                                    Tên TK:{{ this.bankAccountInfo[1].name }}
+                                </p>
+                                <p style="padding-left: 15px" class="mb-0 font-small">
+                                    Số TK:{{ this.bankAccountInfo[1].accNum }}
+                                </p>
+                            </label> -->
+            </div>
+            <div class="col-12">
+              <p-radioButton
+                name="pay"
+                value="thanh toán qua thẻ tín dụng"
+                label="Thanh toán qua thẻ tín dụng"
+                [(ngModel)]="pay"
+              ></p-radioButton>
+            </div>
+            <div class="col-12">
+              <p-radioButton
+                name="pay"
+                value="thanh toán qua thẻ ATM nội địa/Internet Banking"
+                label="Thanh toán qua thẻ ATM nội địa/Internet Banking"
+                [(ngModel)]="pay"
+              >
+              </p-radioButton>
+            </div>
+            <div class="col-12">
+              <p-radioButton
+                name="pay"
+                value="thanh toán trực tiếp"
+                label="Thanh toán trực tiếp"
+                [(ngModel)]="pay"
+              >
+              </p-radioButton>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template pTemplate="footer">
+        <div class="row justify-content-center" style="margin: 20px 0 20px 0">
+          <div
+            class="btnWhite col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="showDialog()"
+          >
+            Quay lại
+          </div>
+          <div
+            class="btnBlue col-12 col-sm-4 text-center"
+            style="margin: 4px 15px 4px 15px"
+            (click)="submitOrder()"
+          >
+            Đặt hàng
+          </div>
+        </div>
+      </ng-template>
+      <!-- End step 2 -->
+    </p-dialog>
+  </div>
+</div>
+
+<div class="wrapMenuRight" style="z-index: 9999">
+  <div
+    class="menuIcon menuIconContainer"
+    style="bottom: 0px"
+    (click)="showDialog()"
+  >
+    <i class="fa-solid fa-cart-shopping" style="z-index: 999999"></i>
+    <div *ngIf="+cartLength > 0" class="cartCount">{{ cartLength }}</div>
+  </div>
+</div>
+
+<app-qr
+  *ngIf="this.display3"
+  [qrStatus]="this.display3"
+  [qrUrl]="this.qrUrl"
+  [accountNumber]="this.accountNumber"
+></app-qr>

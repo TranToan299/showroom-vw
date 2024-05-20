@@ -1,0 +1,21 @@
+.doawload-brochure{
+  display: flex;
+  align-items: center;
+  .brochure{
+    padding: 10px 30px;
+    margin: 0 20px;
+    display: block;
+    border:2px solid #00285c;
+    border-radius: 30px;
+    color:#00285c;
+    text-decoration: none;
+  }
+  .brochure:hover{
+    background: #f3f4f5;
+  }
+  .line{
+    flex:1;
+    height: 2px;
+    background:  rgb(223, 228, 232);
+  }
+}

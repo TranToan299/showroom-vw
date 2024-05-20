@@ -1,0 +1,53 @@
+<div class="view">
+    <canvas #canvas class="webgl"></canvas>
+    <!-- <div class="control-top">
+        <button (click)="goBack()">Quay lại</button>
+    </div> -->
+    <!-- <div class="control-left">
+        <div *ngFor="let menu of menus" class="button btn-light">
+            <span>
+                <img src='./assets/3d/svg/{{menu}}.svg' height="32">
+            </span>
+        </div>
+
+    </div> -->
+    <div class="control-bottom">
+        <!-- <div #name id="name">
+            <h3>Virtual Studio</h3>
+            <h5>{{car.toUpperCase()}}
+                <span style="cursor: pointer; margin-left: 10px;" (click)="goBack()"><img src='/assets/3d/svg/rounded.svg'
+                        height="24"></span>
+            </h5>
+        </div> -->
+
+        <div class="color">
+            <div id="color" class="icon">
+                <img src="./assets/images/color.svg" height="32">
+            </div>
+            <ul>
+                <li *ngFor="let color of carColors"></li>
+            </ul>
+            <label for="open-door">Màu sắc</label>
+        </div>
+        <div class="center">
+            <div class="interior active">
+                <p>Ngoại thất</p>
+            </div>
+            <div class="exterior">
+                <p>Nội thất</p>
+            </div>
+        </div>
+        <div class="door-open">
+            <div id="open-door" class="icon">
+                <img src="./assets/images/car-open.svg" height="32">
+            </div>
+            <label for="open-door">Mở cửa</label>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

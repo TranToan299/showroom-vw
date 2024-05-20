@@ -1,0 +1,46 @@
+<div></div>
+<ng-container *ngFor="let item of content">
+
+    <div class="video-container">
+        <app-owner-banner2 *ngIf="item.component=='owner-banner'" [video]="item.video"></app-owner-banner2>
+    </div>
+
+  <app-owner-main-title *ngIf="item.component=='owner-main-title'" [title]="item.title"
+    [description]="item.description"></app-owner-main-title>
+
+  <app-owner-title *ngIf="item.component=='owner-title'" [title]="item.title" [margin]="2"></app-owner-title>
+
+  <app-owner-detail-vertical *ngIf="item.component=='owner-detail-vertical'"  [items]="item.items">
+  </app-owner-detail-vertical>
+  <app-owner-detail-vertical2 *ngIf="item.component=='owner-detail-vertical2'"  [items]="item.items">
+  </app-owner-detail-vertical2>
+  <app-owner-detail-horizontal *ngIf="item.component=='owner-detail-horizontal'" [title]="item.title"
+    [image]="item.image" [items]="item.items" [description]="item.description" [link]="item.link">
+  </app-owner-detail-horizontal>
+  <app-owner-photo-gallery *ngIf="item.component=='owner-photo-gallery'" [title]="item.title"
+    [description]="item.description" [link]="item.link"  [items]="item.items">
+  </app-owner-photo-gallery>
+  <app-owner-reference *ngIf="item.component=='owner-reference'" [title]="item.title" [description]="item.description"
+    [link]="item.link">
+  </app-owner-reference>
+  <app-owner-list *ngIf="item.component=='owner-list'" [title]="item.title" [items]="item.items"
+    [description]="item.description"></app-owner-list>
+  <app-owner-p *ngIf="item.component=='owner-p'" [content]="item.content"></app-owner-p>
+  <app-owner-image *ngIf="item.component=='owner-image'" [image]="item.image" [title]="item.title"></app-owner-image>
+
+  <app-owner-accordion *ngIf="item.component=='owner-accordion'" [title]="item.title" [items]="item.items"
+  ></app-owner-accordion>
+  <app-owner-accordion2 *ngIf="item.component=='owner-accordion2'" [title]="item.title" [items]="item.items"
+  ></app-owner-accordion2>
+
+  <app-owner-link-list *ngIf="item.component=='owner-link-list'" [items]="item.items"></app-owner-link-list>
+  <app-owner-text-info *ngIf="item.component=='owner-text-info'" [title]="item.title" [items]="item.items">
+  </app-owner-text-info>
+
+</ng-container>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

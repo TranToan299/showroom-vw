@@ -1,0 +1,219 @@
+<div class="wrap">
+  <div class="show">
+    <div>
+      <!-- <video autoplay loop [muted]="'muted'" class="video">
+            <source src="./assets/videos/Volkswagen-introduce.mp4" type="video/mp4">
+          </video> -->
+      <img
+        src="./assets/images/bannerPrebooking.jpg"
+        alt=""
+        class="video"
+        id="bannerPrebooking"
+      />
+    </div>
+    <div class="container">
+      <h1 class="mt-5">Đặt hàng sản phẩm</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <div class="form">
+            <h3>Thông tin cá nhân</h3>
+            <div class="field mt-3">
+              <label for="name" class="d-block">Họ và tên</label>
+              <input
+                id="name"
+                pInputText
+                [(ngModel)]="objCustomer.name"
+                [style]="{ width: '100%' }"
+              />
+            </div>
+            <div class="field mt-3">
+              <label for="phone" class="d-block">Số điện thoại liên hệ</label>
+              <p-inputMask
+                id="phone"
+                [style]="{ width: '100%' }"
+                mask="9999 999 999"
+                [(ngModel)]="objCustomer.phone"
+              >
+              </p-inputMask>
+            </div>
+            <div class="field mt-3">
+              <label for="email" class="d-block">Email</label>
+              <input
+                id="email"
+                pInputText
+                [(ngModel)]="objCustomer.email"
+                [style]="{ width: '100%' }"
+              />
+            </div>
+            <div class="field mt-3">
+              <label for="time" class="d-block"
+                >Thời gian mong muốn nhận xe</label
+              >
+              <p-calendar
+                id="email"
+                [(ngModel)]="objCustomer.time"
+                [showIcon]="true"
+                inputId="icon"
+                [style]="{ width: '100%' }"
+              ></p-calendar>
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <div class="form">
+            <h3>Các thông tin khác</h3>
+            <div class="field mt-3">
+              <p class="d-block">Mua xe cho nhu cầu</p>
+              <div class="d-flex flex-wrap">
+                <div
+                  class="field-radiobutton mr-4 mt-1 d-flex align-item-center"
+                >
+                  <p-radioButton
+                    name="personal"
+                    value="cá nhân"
+                    inputId="personal"
+                    [(ngModel)]="objCustomer.type"
+                  >
+                  </p-radioButton>
+                  <label class="mb-0 ml-2 d-inline-block" for="personal"
+                    >Cá nhân</label
+                  >
+                </div>
+                <div
+                  class="field-radiobutton mr-4 mt-1 d-flex align-item-center"
+                >
+                  <p-radioButton
+                    name="company"
+                    value="công ty"
+                    inputId="company"
+                    [(ngModel)]="objCustomer.type"
+                  >
+                  </p-radioButton>
+                  <label class="mb-0 ml-2 d-inline-block" for="company"
+                    >Công ty</label
+                  >
+                </div>
+                <div
+                  class="field-radiobutton mr-4 mt-1 d-flex align-item-center"
+                >
+                  <p-radioButton
+                    name="project"
+                    value="dự án"
+                    inputId="project"
+                    [(ngModel)]="objCustomer.type"
+                  >
+                  </p-radioButton>
+                  <label class="mb-0 ml-2 d-inline-block" for="project"
+                    >Dự án</label
+                  >
+                </div>
+                <div
+                  class="field-radiobutton mr-4 mt-1 d-flex align-item-center"
+                >
+                  <p-radioButton
+                    name="other"
+                    value="khác"
+                    inputId="other"
+                    [(ngModel)]="objCustomer.type"
+                  >
+                  </p-radioButton>
+                  <label class="mb-0 ml-2 d-inline-block" for="other"
+                    >Khác</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="field-checkbox d-flex align-item-center mt-5">
+              <p-checkbox
+                [(ngModel)]="objCustomer.checkRead"
+                [binary]="true"
+                inputId="check"
+              ></p-checkbox>
+              <label for="check" class="mb-0 ml-2 d-inline-block"
+                >Tôi đã đọc và tìm hiểu kỹ thông tin cũng như xác nhận thông tin
+                cung cấp hoàn toàn chính xác.</label
+              >
+            </div>
+            <div class="field-checkbox d-flex align-item-center mt-5">
+              <p-checkbox
+                [(ngModel)]="objCustomer.checkDepositTerms"
+                [binary]="true"
+                inputId="checkDepositTerms"
+              ></p-checkbox>
+              <label for="checkDepositTerms" class="mb-0 ml-2 d-inline-block"
+                >Tôi đã đọc, hiểu rõ và xác nhận đồng ý với toàn bộ nội dung
+
+                <a
+                  href="./assets/VW_Dieu_Khoan_Mua_Ban.pdf"
+                  style="
+                    display: inline-block;
+                    color: #2552ff;
+                    font-weight: 500;
+                  "
+                  target="_blank"
+                  >Điều khoản
+                </a>
+                trong Thỏa Thuận Đặt Cọc trên cũng như Chính Sách Ưu Đãi áp dụng
+                tại thời điểm đặt mua xe ô tô này trên Volkswagen Việt Nam.
+              </label>
+            </div>
+            <div class="field-checkbox d-flex align-item-center mt-5">
+              <p-checkbox
+                [(ngModel)]="objCustomer.checkOnlineTerms"
+                [binary]="true"
+                inputId="checkOnlineTerms"
+              ></p-checkbox>
+              <label for="checkOnlineTerms" class="mb-0 ml-2 d-inline-block"
+                >Tôi đồng ý với các
+                <a
+                  href="/legal"
+                  style="
+                    display: inline-block;
+                    color: #2552ff;
+                    font-weight: 500;
+                  "
+                  target="_blank"
+                  >Điều kiện & Điều khoản
+                </a>
+                của Volkswagen Việt Nam.</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+
+        <div
+          class="wrap-btn mt-5 mb-5"
+          style="display: flex; justify-content: center"
+        >
+          <div class="btnBlue" (click)="submit()">Đặt hàng</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-thank hidden">
+    <div class="content">
+      <div class="logo">
+        <img src="./assets/images/logoBlue.svg" alt="" width="100" />
+      </div>
+      <div class="text-thank">
+        Cám ơn bạn đã lựa chọn dòng xe <span>Volkswagen</span>
+      </div>
+      <div class="will">
+        Đại lý chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.
+      </div>
+      <div class="text-thank2">Trân trọng cám ơn!</div>
+      <div class="name">Volkswagen Việt Nam</div>
+      <div class="wrap-btnBlue">
+        <a [routerLink]="'/'" class="btnBlue">Trở về trang chủ</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast-container">
+  <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

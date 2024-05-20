@@ -1,0 +1,58 @@
+.link {
+    // font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #001E50;
+}
+
+.container {
+    font-size: 18px;
+
+    .large-gallery{
+        display: block;
+    }
+
+    .small-gallery{
+        display: none;
+    }
+}
+
+
+
+
+@media only screen and (min-width:860px) {
+    .small-gallery{
+        display: none !important;
+    }
+
+    .large-gallery{
+        display: block !important;
+    }
+}
+
+
+
+
+@media only screen and (max-width:859px) {
+    .small-gallery{
+        display: block !important;
+    }
+
+    .large-gallery{
+        display: none !important;
+    }
+
+}
+
+@media only screen and (max-width:700px) {
+    ::ng-deep .p-carousel .p-carousel-content .p-carousel-next{
+        display: none;
+    }
+    
+    ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+        display: none;
+    }
+}

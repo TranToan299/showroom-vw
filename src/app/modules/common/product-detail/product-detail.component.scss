@@ -1,0 +1,117 @@
+.iframe{
+  height: 70vh;
+}
+.temp{
+  height: 70vh;
+  background: #DFE4E8;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 70px;
+  font-weight: 700;
+  align-items: center;
+}
+.tab-view{
+  .tab{
+    // display: flex;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: none;
+    z-index: 1000;
+    padding-bottom: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    .tab-item{
+      font-family: Roboto;
+      color: rgb(0, 30, 80);
+      margin-right: 30px;
+      padding: 10px 6px;
+      cursor: pointer;
+    }
+    .tab-item-unique{
+      font-family: Roboto;
+      color: rgb(0, 30, 80);
+      margin-right: 30px;
+      padding: 10px 6px;
+      cursor: pointer;
+    }
+    .active{
+      font-weight: bold;
+      position: relative;
+    }
+    .active::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height:2px;
+      background: rgb(0, 30, 80);
+    }
+  }
+  .view{
+    .view-item{
+      // height: 1000px;
+      padding-top: 70px;
+
+    }
+    .view-item:first-child,.view-item:nth-child(2){
+      // height: 1000px;
+      padding-top: 0px;
+
+    }
+    
+  }
+}
+
+
+.wrap-tab-view-mobile{
+  position: fixed;
+  top: 0;
+  background: transparent;
+  width: 100%;
+  display: none;
+  z-index: 10000;
+  .menu-tab{
+    z-index: 1000;
+    font-family: Roboto;
+    color:rgb(0, 30, 80);
+    margin-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    float: right;
+    i{
+      padding: 2px 3px;
+      background: #fff;
+      border-radius: 50%;
+      border:1px solid rgb(0, 30, 80);
+
+    }
+  }
+}
+.view-item-mobile{
+  font-family: Roboto;
+  color: rgb(0, 30, 80);
+  margin-right: 30px;
+  padding: 10px 6px;
+  cursor: pointer;
+}
+// tablet and mobile
+@media only screen and (max-width : 1024px) {
+
+}
+//  mobile
+@media only screen and (max-width:414px){
+    .iframe{
+        height: 50vh;
+    }
+    .tab{
+      display: none!important;
+    }
+    .wrap-tab-view-mobile{
+      display: block;
+    }
+}

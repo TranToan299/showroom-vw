@@ -1,0 +1,445 @@
+.wrapMenuRight {
+    position: fixed;
+    bottom: 70px;
+    transform: translateY(-50%);
+    right: 12px;
+    transition: ease 0.2s;
+
+    .circle {
+        // border-radius: 50%;
+        // height: 40px;
+        // width: 40px;
+        margin-top: 30px;
+    }
+
+    .menuList {
+        position: relative;
+        transition: ease 0.2s;
+    }
+
+    .hideToRight {
+        // right:-15rem;
+        right: -110%;
+        // transition: ease 0.2s;
+    }
+
+    .menuIcon {
+        position: absolute;
+        right: 0;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .menuIconContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin: 0 12px;
+        background: radial-gradient(circle at 50% 85%, #00437a 0%, #001e50 100%);
+        border-radius: 50%;
+    }
+
+    .cartCount {
+        position: absolute;
+        top: -8px;
+        /* right: 22.5px; */
+        left: -5px;
+        background: #ff0000;
+        font-size: 1.4rem;
+        width: 25px;
+        font-weight: bold;
+        height: 25px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px #0000009c;
+    }
+}
+
+.menuIcon {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.menuIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 12px;
+    background: radial-gradient(circle at 50% 85%, #00437a 0%, #001e50 100%);
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 576px) {
+}
+
+.wrap {
+    font-family: Roboto;
+    position: relative;
+
+    .font-small {
+        font-size: 0.8rem;
+    }
+
+    .list-image {
+        .list-image-item {
+            position: relative;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .active::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            height: 2px;
+            background: #2c72c6;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .detail {
+        img {
+            width: 100%;
+        }
+
+        .info {
+            .price {
+                .price-value {
+                    color: #2c72c6;
+                    font-weight: 700;
+                    font-size: 20px;
+                    margin-left: 10px;
+                    position: relative;
+                    bottom: 4px;
+                }
+            }
+
+            .version {
+                .active {
+                    border: 2px solid #2c72c6 !important;
+                }
+
+                .version-item {
+                    padding: 10px 20px;
+                    border: 1px solid #333;
+                    margin: 10px;
+                    cursor: pointer;
+                }
+            }
+
+            .color {
+                .active::after {
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    top: -3px;
+                    left: -3px;
+                    position: absolute;
+                    border: 2px #2c72c6 solid;
+                    border-radius: 50%;
+                }
+
+                .color-item {
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                    margin: 10px;
+                    position: relative;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .bold-text {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    .gray-text {
+        font-weight: 500;
+        color: #7a7a7a;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin-bottom: 5px;
+        word-break: break-word;
+    }
+
+    .separator {
+        border-bottom: 1px solid #f1f1f1;
+        width: 100%;
+        margin: 20px 0 20px 0;
+    }
+
+    .supHeader {
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .smallHeader {
+        font-size: 1rem;
+    }
+
+    .mtb5 {
+        margin: 8px 0 8px 0;
+    }
+
+    .trashIcon {
+        font-size: 36px;
+        padding:5px;
+        margin-right:10px;
+        color: #d33d3d;
+        cursor: pointer;
+
+        &:hover {
+            color:#e70000;
+            opacity: 0.8;
+        }
+    }
+}
+
+.dialogConfirm {
+    width: 100vw !important;
+}
+
+.xBtn {
+    text-align: right;
+    & i {
+        font-size: 35px;
+        color: #001e50;
+        cursor: pointer;
+        &:hover {
+            color: #2c72c6;
+        }
+    }
+}
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.required {
+    color: #2c76c8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btnBlue {
+    background: rgb(0, 30, 80);
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnBlue:hover {
+    background: #2c72c6;
+}
+
+.btnWhite {
+    background: #fff;
+    padding: 10px 20px;
+    color: rgb(0, 30, 80);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(0, 30, 80);
+}
+
+.btnWhite:hover {
+    background: rgb(240, 240, 240);
+    border-color: #2c72c6;
+}
+
+.toast-thank {
+    font-family: Roboto;
+    background: rgb(0, 30, 80);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    .content {
+        background: #fff;
+        color: rgb(0, 30, 80);
+        padding-left: 100px;
+        padding-right: 100px;
+
+        .logo {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 70px;
+        }
+
+        .text-thank {
+            font-weight: 600;
+            font-size: 24px;
+            text-align: center;
+
+            span {
+                font-weight: bold;
+                font-size: 30px;
+            }
+        }
+
+        .will {
+            font-size: 22px;
+            margin-top: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .text-thank2 {
+            margin-top: 4px;
+            font-size: 22px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .name {
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .wrap-btnBlue {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+
+            margin-bottom: 70px;
+        }
+    }
+}
+
+:host ::ng-deep p-checkbox {
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+:host ::ng-deep p-radiobutton {
+    align-items: center;
+    margin-top: 20px;
+}
+
+:host ::ng-deep label {
+    // margin-bottom: 0;
+}
+
+@media only screen and (max-width: 576px) {
+    .wrap {
+        padding-top: 50px;
+    }
+
+    .toast-thank {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .content {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            .text-thank {
+                font-size: 22px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+            }
+
+            .will {
+                font-size: 22px;
+            }
+
+            .text-thank2 {
+                font-size: 22px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+        }
+    }
+
+    label {
+        font-size: 14px !important;
+    }
+
+    :host ::ng-deep label {
+        font-size: 14px !important;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .wrap {
+        .toast-thank {
+            .content {
+                padding: 15px !important;
+
+                .logo {
+                    display: none !important;
+                }
+
+                .wrap-btnBlue {
+                    display: none !important;
+                }
+
+                .text-thank {
+                    font-size: 18px !important;
+
+                    span {
+                        font-size: 24px !important;
+                    }
+                }
+
+                .will {
+                    font-size: 18px !important;
+                    margin-top: 18px !important;
+                }
+
+                .text-thank2 {
+                    font-size: 18px !important;
+                }
+
+                .name {
+                    font-size: 22px !important;
+                    margin-top: 18px;
+                }
+            }
+        }
+    }
+}

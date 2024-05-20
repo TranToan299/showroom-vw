@@ -1,0 +1,21 @@
+<div class="wrap">
+    <div class="row justify-content-center">
+        <h2 class="col-9 col-sm-9 col-lg-6 col-xl-6 mainTitle margin-top">
+            {{this.mainTitle.title}}
+        </h2>
+        <p class="col-10 col-sm-10 col-lg-7 col-xl-7 description">
+            {{this.title.title}}
+        </p>
+        <div class="col-10 col-sm-10 col-lg-7 col-xl-7 text-center">
+            <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="description link">Liên hệ đại lý</a>
+        </div>
+
+    </div>
+    <app-owner-link-list *ngIf="this.listLink" [items]="this.listLink.items"></app-owner-link-list>
+</div>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

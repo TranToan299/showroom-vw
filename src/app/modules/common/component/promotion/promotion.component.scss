@@ -1,0 +1,31 @@
+.wrap{
+  padding-top: 100px;
+  font-family: Roboto;
+  .title{
+    margin-top: 50px;
+  }
+
+}
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+@media only screen and (max-width:576px){
+  .wrap{
+    padding-top: 100px;
+  }
+}
+
+.news-content {
+  max-width: 100%;
+  margin-bottom: 300px;
+
+  @media only screen and (max-width:576px){
+    margin-bottom: 800px;
+  }
+
+ 
+}

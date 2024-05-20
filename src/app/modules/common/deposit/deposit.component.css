@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.border {
+  padding: 50px;
+  /* padding-top: 70px; */
+}
+
+.top-menu {
+  height: 100px;
+  /* background-color: #001e50; */
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toast-container {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.content {
+  display: flex;
+}
+
+.content .product-info {
+  display: flex;
+  flex: 1;
+  /* border: 1px solid #ddd; */
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45vw;
+}
+
+.product-info img {
+  width: 100%;
+}
+
+.content .info-customer {
+  flex: 1;
+  /* border: 1px solid #ddd; */
+  width: 100%;
+}
+.customer-name {
+  width: 100%;
+  /* border: 1px solid #001e50; */
+  margin-top: 20px;
+}
+
+.customer-name span {
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+li .cat-item:hover {
+  background-color: #e5ecf2;
+}
+/*
+li .cat-item input[type = "radio"]:checked{
+    background-color: #e5ecf2;
+} */
+.viewer .controls .watermark {
+  display: none !important;
+}
+
+::ng-deep .viewer .controls .watermark {
+  display: none !important;
+}
+
+li .cat-item {
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+}
+
+li .cat-item input {
+  color: #001e50;
+  background-color: #001e50;
+}
+
+.color-item {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+}
+
+.ext-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.location-info {
+  width: 45vw;
+  /* border: 1px solid #001e50; */
+}
+
+.location-info select {
+  width: 100%;
+}
+
+.action button {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  background-color: #001e50;
+  border: 1px solid #001e50;
+  font-size: small;
+}
+
+::ng-deep .p-dropdown {
+  width: 100%;
+}
+
+.location-item {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.lst-location {
+  margin-bottom: 15px;
+}
+
+.lst-location ul {
+  margin-top: 10px;
+}
+
+.info-customer div input {
+  padding: 5px;
+  width: 100%;
+}
+
+.mobile,
+.name,
+.email,
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+::ng-deep .p-inputtext {
+  width: 100%;
+}

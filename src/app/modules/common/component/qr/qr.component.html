@@ -1,0 +1,31 @@
+<p-dialog [(visible)]="display" header=" ">
+  <div *ngIf="this.isShowSuccess" class="qr-payment toast-thank hidden">
+    <div class="content">
+      <div class="logo">
+        <img
+          src="./assets/images/logoBlue.svg"
+          alt=""
+          width="70"
+          style="width: 40%"
+        />
+      </div>
+      <div class="text-thank">
+        Cám ơn bạn đã lựa chọn dòng xe <span>Volkswagen</span>
+      </div>
+      <div class="will">
+        Đại lý chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.
+      </div>
+      <div class="text-thank2">Trân trọng cám ơn!</div>
+      <div class="name">Volkswagen Việt Nam</div>
+      <div class="wrap-btnBlue">
+        <a [routerLink]="'/'" class="btnBlue">Trở về trang chủ</a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.isShowQR">
+    <div class="text-center">
+      <h6>Vui lòng quét mã qua ứng dụng trên điện thoại để thanh toán</h6>
+    </div>
+    <img width="500px" height="450px" src="{{ qrUrl }}" alt="qr" />
+  </div>
+</p-dialog>

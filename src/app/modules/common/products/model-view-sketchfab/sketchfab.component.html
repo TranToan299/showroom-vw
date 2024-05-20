@@ -1,0 +1,40 @@
+<div class="main">
+        <div class="left">
+                <!-- <li *ngFor="let product of products"
+                                [ngStyle]="product.hidden == true ? {'display': 'none'} : {'display': 'block'}">
+                                <iframe title="product.name" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered
+                                        web-share [src]="product.id | safe">
+                                </iframe>
+                        </li> -->
+                <!-- <iframe *ngIf="productSelect" title="product.name" frameborder="0" allowfullscreen
+                                        mozallowfullscreen="true" webkitallowfullscreen="true"
+                                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                                        [src]="productSelect | safe">
+                                </iframe> -->
+                <!-- <iframe id="myiFrame" #myiFrame frameborder="0" allowfullscreen
+                                        mozallowfullscreen="true" webkitallowfullscreen="true"
+                                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                                        >
+                                </iframe> -->
+                <iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                        [src]="productSelect | safe">
+                </iframe>
+        </div>
+        <div class="right">
+                <ul>
+                        <li *ngFor="let color of colors">
+                                <div class="color" [style.background-color]="color" (click)="changeColor(color)">
+                                </div>
+                        </li>
+                </ul>
+        </div>
+</div>
+<div>
+        <img src="./assets/images/welcome-loading-vrstudio.jpg" alt="" class="imgLoading">
+</div>

@@ -1,0 +1,170 @@
+<div class="wrap">
+    <div class="video-container">
+        <app-owner-banner2 *ngIf="this.banner" [video]="this.banner"></app-owner-banner2>
+    </div>
+
+    <app-owner-main-title *ngIf="this.mainTitle" [title]="this.mainTitle"></app-owner-main-title>
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title">{{this.title}}</h2>
+                <div style="margin:30px 0 0 30px;" class="content">
+                    <p>Từ hiệu suất động cơ cho đến lực phanh: Với dầu động cơ và các chất lưu của chúng tôi, giúp chiếc
+                        Volkswagen của bạn vận hành tốt và có tuổi thọ dài hơn. Đồng thời cung cấp sự bổ sung lý tưởng
+                        cho động cơ, giúp bảo vệ và cho hiệu suất cao nhất.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="row" style="width:100%; justify-content:center; margin-top:130px;">
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6 justify-content-center" style="text-align:center; ">
+                <img style="max-width:1024px;"
+                    src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/engine-1.webp" />
+            </div>
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6" style="padding:0 50px 0 50px;">
+                <div style="margin-bottom:20px;">
+                    <b style="font-size:22px;">NHỚT ĐỘNG CƠ CHÍNH HÃNG</b>
+                </div>
+                <div>
+                    <p>
+                        <b>VOLKSWAGEN LONGLIFE III FE SAE 0W-30 </b>
+                        <span>với tính năng bảo vệ động cơ vượt trội và đặc biệt tương thích với các dòng xe Volkswagen.
+                            Sản phẩm được sử dụng tại các đại lý Volkswagen ủy quyền trên toàn quốc.</span>
+                    </p>
+                </div>
+                <div style="margin-top:40px;">
+                    <span class="link" (click)="showDialog()">Tìm hiểu thêm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p-dialog [(visible)]="display" styleClass="dialogInfo" [style]="{width: '100vw'}" [closable]="false">
+        <div style="height:100%; width:100%; background:#fff;">
+            <div class="closeButtonContainer" (click)="hideDialog()">
+                <i class="fa-solid fa-xmark closeButton"></i>
+            </div>
+            <div class="separator"></div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-lg-9 col-xl-8">
+                    <div>
+                        <p style="font-size:1.3rem; margin:30px;">
+                            <b>VOLKSWAGEN LONGLIFE III FE SAE 0W-30</b>
+                            <span> - nhập khẩu trực tiếp từ Đức, được phát triển đặc biệt cho các dòng xe Volkswagen
+                                giúp tăng tuổi thọ và độ bền các chi tiết kết cấu bên trong động cơ nhờ chất lượng bôi
+                                trơn và giảm ma sát tốt. Thành phần của nhớt làm giảm cặn bẩn trong quá trình hoạt động
+                                giúp động cơ đáp ứng tối đa các điều kiện vận hành.</span>
+                        </p>
+                        <p style="font-size:1.3rem; margin:30px;">
+                            <b>VOLKSWAGEN LONGLIFE III FE SAE 0W-30</b>
+                            <span> tăng cường hiệu năng của động cơ, được chứng minh qua các thử nghiệm độc lập dựa theo
+                                các tiêu chuẩn quốc tế.</span>
+                        </p>
+                        <p style="font-size:1.3rem; margin:30px;">
+                            <span>Volkswagen Việt Nam mong muốn mang đến cho khách hàng dòng sản phẩm nhớt chất lượng
+                                với tính năng bảo vệ động cơ vượt trội trong nhiều điều kiện lái xe và nhiệt độ; cải
+                                thiện mức độ tiêu thụ nhiên liệu, giúp giảm lượng phát thải CO2. Sản phẩm được sử dụng
+                                tại các xưởng dịch vụ uỷ quyền của Volkswagen trên toàn quốc.</span>
+                        </p>
+                    </div>
+                    <div style="margin:30px 0 0 30px; padding-bottom:50px" class="separator">
+                        <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="link">Tìm đại lý ủy quyền của
+                            Volkswagen</a>
+                    </div>
+                    <div style="margin:30px 0 0 30px; padding-bottom: 50px;" class="separator">
+                        <a href="https://www.vw.com.vn/vi/imprint.html" class="blankLink" target="_blank"
+                            style="display: inline-block">Imprint</a>
+                        <span class="sepaVertical"></span>
+                        <a href="https://www.vw.com.vn/legal" class="blankLink" target="_blank"
+                            style="display: inline-block">Pháp lý</a>
+                        <span class="sepaVertical"></span>
+                        <a href="https://www.vw.com.vn/vi/cookies.html" class="blankLink" target="_blank"
+                            style="display: inline-block">Cookies</a>
+                    </div>
+                    <div style="margin:30px; color:rgb(106, 118, 125);">
+                        <p style="font-size:1.4rem; font-weight:bold">Từ chối bởi Volkswagen Vietnam</p>
+                        <span>Mọi thông tin, hình ảnh, màu sắc và thông số kỹ thuật có trong trang website này được trình bày dưới hình thức tham khảo, hướng dẫn chung về các sản phẩm và phụ kiện được cung cấp bởi Volkswagen Việt Nam. Mọi nỗ lực nhằm đảm bảo tính chính xác và cập nhật nhưng tuyệt đối không phải hoàn toàn không có lỗi. Trong một số trường hợp, các hình ảnh sản phẩm nước ngoài hiển thị theo hướng dẫn. Do đó, cả Volkswagen AG và Volkswagen Việt Nam đều không chịu trách nhiệm cho bất kỳ thiệt hại nào từ việc truy cập hoặc sử dụng trang web này và nội dung của nó.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-dialog>
+
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title">{{this.title1}}</h2>
+            </div>
+        </div>
+    </div>
+
+    <app-owner-detail-horizontal *ngIf="this.horizontal" [title]="this.horizontal.title" [image]="this.horizontal.image"
+        [items]="this.horizontal.items" [description]="this.horizontal.description"></app-owner-detail-horizontal>
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title">{{this.title2}}</h2>
+                <h3 class="title" style="font-size:23px !important; margin-left:30px; margin-top:30px;">{{this.title3}}
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <app-owner-detail-horizontal *ngIf="this.horizontal1" [image]="this.horizontal1.image"
+        [items]="this.horizontal1.items" [description]="this.horizontal1.description"></app-owner-detail-horizontal>
+
+    <div class="row">
+        <div class="row" style="width:100%; justify-content:center; margin-top:130px;">
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6" style="padding:0 50px 0 50px;">
+                <div>
+                    <div class="left-title-container">
+                        <h2 class="title">Loại bỏ bụi bẩn – bảo vệ xe của bạn</h2>
+                    </div>
+                    <div style="margin-bottom:20px; padding:0px 30px 0 30px;">
+                        <b style="font-size:22px;">Dung dịch lau kính chính hãng Volkswagen</b>
+                    </div>
+                    <div>
+                        <p style="padding:0px 30px 0 30px;">
+                            Với dung dịch lau kính, bạn sẽ luôn có một tầm nhìn rõ khi đang lái xe. Đồng thời bảo vệ
+                            kính chắn gió và hệ thống gạt nước, rửa kính chống lại sương giá và vôi - mà không để lại
+                            bất kỳ vết bẩn nào trên kính xe.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6 justify-content-center" style="text-align:center;">
+                <img style="min-width:400px;"
+                    src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/engine-4.webp" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title">{{this.title4}}</h2>
+                <h3 class="title" style="font-size:23px !important; margin-left:30px; margin-top:30px;">{{this.title5}}
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <app-owner-detail-horizontal *ngIf="this.horizontal2" [image]="this.horizontal2.image"
+        [items]="this.horizontal2.items" [description]="this.horizontal2.description"></app-owner-detail-horizontal>
+
+    <app-owner-detail-horizontal *ngIf="this.horizontal3" [image]="this.horizontal3.image"
+        [title]="this.horizontal3.title" [description]="this.horizontal3.description" [link]="this.horizontal3.link">
+    </app-owner-detail-horizontal>
+
+    <div class="toast-container">
+        <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+    </div>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

@@ -1,0 +1,196 @@
+<div class="wrap">
+  <div
+    class="teramont-x__banner"
+    style="
+      background-image: url('../../../../../assets/images/teramont-x/teramont-x-banner.jpg');
+    "
+  >
+    <div class="teramont-x__banner__introduce container">
+      <p class="teramont-x__banner__introduce__title">Volkswagen <strong>Teramont <span style="color:red">X</span></strong></p>
+      <!-- <p class="teramont-x__banner__introduce__text">
+        Volkswagen Teramont X - Dòng SUV thể thao đa dụng
+      </p>
+      <p class="teramont-x__banner__introduce__subtitle">Giá công bố:</p>
+      <p class="teramont-x__banner__introduce__price mt-3">
+        Teramont X Luxury: 1.998.000.000 VNĐ
+      </p>
+
+      <p style="margin-top: -10px" class="teramont-x__banner__introduce__price">
+        Teramont X Premium: 2.168.000.000 VNĐ
+      </p> -->
+      <div class="mt-5">
+        <app-button
+          name="Đặt lịch lái thử"
+          type="secondary"
+          link="/product/test-drive"
+          size="medium"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="teramont-x__body">
+    <!-- NAV -->
+    <div class="teramont-x__nav">
+      <div class="row">
+        <div class="col-lg-8 col-md-12">
+          <ul class="teramont-x__nav__list">
+            <li class="mr-4">Tổng quan</li>
+            <li class="mr-4" (click)="goToElement('#design')">Ngoại thất</li>
+            <li class="mr-4" (click)="goToElement('#interior')">
+              Nội thất tiện nghi
+            </li>
+            <li class="mr-4" (click)="goToElement('#operation')">
+              Khả năng vận hành
+            </li>
+            <li class="mr-4" (click)="goToElement('#sss')">
+              Hệ thống an toàn và hỗ trợ
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="teramont-x__nav__btn">
+            <div class="mr-2">
+              <!-- Chưa có link -->
+              <app-button
+                name="Đặt ngay"
+                type="primary"
+                link="/teramont_x/deposit"
+                size="medium"
+              ></app-button>
+            </div>
+            <div class="">
+              <app-button
+                name="Lái thử"
+                type="secondary"
+                link="/product/test-drive"
+                size="medium"
+              ></app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5 mb-3">
+      <h1 class="font-weight-bold text-black text-center fs-title-cate"
+      > Công nghệ tiên phong – Trải nghiệm đẳng cấp</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 text-center ">
+          <p class="text-body mt-3 text-black">Chiến thần lịch lãm tạo nên xu hướng thời thượng trong phân khúc SUV thể thao đa dụng thương hiệu Đức</p>
+        </div>
+      </div>
+    </div>
+    <!-- General Infomation -->
+    <div class="teramont-x__general mb-5 pt-0">
+     <!-- Product Version -->
+     <div class="product-version my-5 container">
+      <p-carousel [autoplayInterval]="5000" [value]="listProductVersion">
+        <ng-template let-productVersion pTemplate="productVersion">
+          <app-product-version-detail
+            [productVersion]="productVersion"
+          ></app-product-version-detail>
+        </ng-template>
+      </p-carousel>
+    </div>
+
+      <div class="container mt-5">
+        <div class="expandable-panel">
+          <div class="panel-header" (click)="togglePanel()">
+            <div class="panel-icon__container">
+              <div
+                class="panel-icon"
+                [ngClass]="{
+                  'panel-icon--open': isExpanded,
+                  'panel-icon--close': !isExpanded
+                }"
+              >
+                <i *ngIf="isExpanded" class="fa fa-close"></i>
+                <i *ngIf="!isExpanded" class="fa fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="isExpanded" class="panel-content">
+            <p-carousel [autoplayInterval]="2000" [value]="listImage">
+              <ng-template let-image pTemplate="item">
+                <img
+                  class="carou-image"
+                  [src]="image.ImageUrl"
+                  [alt]="'TeramontX'"
+                />
+              </ng-template>
+            </p-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Brochure -->
+    <div class="my-5">
+      <app-category-brochure
+        [name]="brochure.name"
+        [link]="brochure.link"
+      ></app-category-brochure>
+    </div>
+    <!-- Prebooking -->
+    <div class="teramont-x__prebooking">
+      <div class="container-fluid">
+        <div class="booking p-3 p-md-5 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <div class="text-white booking-title">
+                Volkswagen <strong>Teramont X</strong>
+              </div>
+              <div class="text-white booking-title">
+                {{ preBooking.titleBreak }}
+              </div>
+              <a
+                class="btn-book my-5 zoomOwn"
+                [routerLink]="preBooking.link.value"
+              >
+                {{ preBooking.link.name }}
+              </a>
+            </div>
+            <div class="col-12 col-md-7">
+              <img [src]="preBooking.image" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Infomation -->
+    <!-- Component Product -->
+    <div *ngFor="let item of listProductBanner">
+      <app-product-banner
+        [id]="item.id"
+        [subtitle]="item.subtitle"
+        [title]="item.title"
+        [banner]="item.banner"
+        [listInfo]="item.listInfo"
+      ></app-product-banner>
+    </div>
+    <!-- Category Reference -->
+    <app-category-reference
+      [title]="category.title"
+      [mt]="category.mt"
+      [description]="category.description"
+      [link]="category.link"
+    ></app-category-reference>
+    <div class="mt-5">
+      <app-category-photo-gallery
+        [title]="gallery.title"
+        [mt]="gallery.mt"
+        [content]="gallery.content"
+      ></app-category-photo-gallery>
+    </div>
+  </div>
+  <app-menu-right *ngIf="!isDeposit"></app-menu-right>
+  <app-like></app-like>
+  <div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+  </div>
+  <app-cart></app-cart>
+  <app-facebook-chat></app-facebook-chat>
+</div>

@@ -1,0 +1,59 @@
+<div class="wrap-tab-view-mobile">
+  <div class="menu-tab" (click)="onClickMenuMobile()">
+    <i class="pi pi-chevron-down "></i>
+  </div>
+</div>
+<p-sidebar [(visible)]="visibleSidebar" position="right" [baseZIndex]="10000" [style]="{width:'200px'}">
+  <div *ngFor="let item of tabs; let i = index" [attr.data-index]="i" (click)="onclickTabMoblie($event)"
+    class="view-item-mobile">
+    {{item}}
+  </div>
+
+</p-sidebar>
+<div class="tab-view">
+  <!-- Tab items -->
+  <div class="tab animate__animated animate__slideInDown">
+
+    <div *ngFor="let item of tabs; let i = index" [attr.data-index]="i" (click)="onclickTab($event)" class="tab-item">
+      {{item}}
+    </div>
+
+  </div>
+
+  <!-- Tab content -->
+  <div class="view">
+    <div class="view-item">
+    </div>
+    <div class="view-item">
+      <!-- <iframe name="vw" src="https://tour.panoee.com/volkswagen-viet-nam/621a9027118202d9176a7b21" frameBorder="0"
+        width="100%" class="iframe" scrolling="no" allow="vr,gyroscope,accelerometer" allowFullScreen="false"
+        loading="eager">
+      </iframe> -->
+      <div class="temp iframe">3D CAR MODEL</div>
+    </div>
+    <div class="view-item">
+      <app-gallery></app-gallery>
+    </div>
+    <div class="view-item">
+      <app-design></app-design>
+    </div>
+    <div class="view-item">
+      <app-technology></app-technology>
+    </div>
+    <div class="view-item">
+      <app-performance></app-performance>
+    </div>
+    <div class="view-item ">
+      <app-safety></app-safety>
+    </div>
+    <div class="view-item ">
+      <deposit></deposit>
+    </div>
+    <div class="view-item ">
+      <app-book></app-book>
+    </div>
+    <div class="view-item ">
+
+    </div>
+  </div>
+</div>

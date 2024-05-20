@@ -1,0 +1,66 @@
+<div></div>
+<img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/Touareg-PC.webp" alt="" class="banner"
+  id="touaregBanner">
+
+<ng-container *ngFor="let item of content">
+  <app-category-main-title *ngIf="item.component == 'app-category-main-title'" [title]="item.title"
+    [description]="item.description"></app-category-main-title>
+</ng-container>
+<ng-container *ngFor="let item of content">
+  <!-- <app-category-banner
+    *ngIf="item.component == 'app-category-banner' && device == 'pc'"
+    [image]="item.image"
+  >
+  </app-category-banner>
+
+  <app-category-banner
+    *ngIf="item.component == 'app-category-banner' && device == 'tablet'"
+    [image]="item.imageTablet"
+  >
+  </app-category-banner>
+
+  <app-category-banner
+    *ngIf="item.component == 'app-category-banner' && device == 'mobile'"
+    [image]="item.imageMobile"
+  >
+  </app-category-banner> -->
+
+
+
+  <app-category-summary *ngIf="item.component == 'app-category-summary'"
+    [content]="item.content"></app-category-summary>
+
+  <app-category-brochure *ngIf="item.component == 'app-category-brochure'" [name]="item.name"
+    [link]="item.link"></app-category-brochure>
+
+  <app-category-h1 *ngIf="item.component == 'app-category-h1'" [name]="item.name" [description]="item.description"
+    [isCenterDescription]="item.isCenterDescription" [mt]="item.mt"></app-category-h1>
+
+  <app-category-special-features *ngIf="item.component == 'app-category-special-features'" [title]="item.title"
+    [mt]="item.mt" [content]="item.content"></app-category-special-features>
+  <app-category-special-features-v2 *ngIf="item.component == 'app-category-special-features-v2'" [title]="item.title"
+    [mt]="item.mt" [images]="item.images" [infos]="item.infos"></app-category-special-features-v2>
+
+  <app-category-special-features-v3 *ngIf="item.component == 'app-category-special-features-v3'" [title]="item.title"
+    [mt]="item.mt" [images]="item.images" [infos]="item.infos"></app-category-special-features-v3>
+
+  <app-category-tab-horizontal *ngIf="item.component == 'app-category-tab-horizontal'" [title]="item.title"
+    [mt]="item.mt" [content]="item.content"></app-category-tab-horizontal>
+
+  <app-category-tab-horizontal-gallery *ngIf="item.component == 'category-tab-horizontal-gallery'" [title]="item.title"
+    [mt]="item.mt" [content]="item.content"></app-category-tab-horizontal-gallery>
+
+  <app-category-photo-gallery *ngIf="item.component == 'app-category-photo-gallery'" [title]="item.title" [mt]="item.mt"
+    [content]="item.content"></app-category-photo-gallery>
+
+  <app-category-reference *ngIf="item.component == 'app-category-reference'" [title]="item.title" [mt]="item.mt"
+    [description]="item.description" [link]="item.link"></app-category-reference>
+</ng-container>
+
+<app-menu-right></app-menu-right>
+<app-like></app-like>
+<div class="toast-container">
+  <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

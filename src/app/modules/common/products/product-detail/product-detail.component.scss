@@ -1,0 +1,191 @@
+.info{
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 40px;
+
+  .nameProduct{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 52px;
+    /* identical to box height, or 81% */
+    
+  
+    
+    /* Primary/blue600 */
+    
+    color: #001E50;
+  }
+  .nameBrand{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    
+    color: #000000;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .description{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    
+    color: #000000;
+  }
+}
+.summary{
+  background: radial-gradient(84.38% 88.15% at -21.32% -26.39%, #00437A 0%, #001E50 100%);
+  height: 200px;
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  .summaryItem{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .summaryItemTitle{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    min-height: 48px;
+    // line-height: 52px;
+    /* identical to box height, or 325% */
+    
+  
+    align-items: center;
+    
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .summaryItemContent{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 52px;
+    /* identical to box height, or 217% */
+    
+  
+    align-items: center;
+    /* margin-top: 20px; */
+    color: #FFFFFF;
+  }
+  .sepaVertical{
+    height: 120px;
+    width: 1px;
+    background:#DFE4E8;
+  }
+  
+}
+
+
+
+
+
+
+/* Service */
+.service{
+  .titleService{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    color: #001E50;
+    opacity: 1!important;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .wrapServiceItem{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+      
+  
+  }
+  .serviceItem{
+    margin: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #E8EBED;
+    height: 172px;
+    cursor: pointer;
+  }
+  .serviceItem:hover{
+    background-color: #e6e6e6;
+  }
+  .serviceItemTitle{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+  
+    
+    /* Primary/blue600 */
+    
+    color: #001E50;
+    margin-top: 20px;
+  }
+    
+}
+
+
+@media only screen and (max-width:420px){
+  .info{
+    padding-left: 15px;
+    padding-right: 15px;
+    .nameProduct{
+      font-size: 36px;
+    }
+    .nameBrand{
+      font-size: 20px;
+    }
+  }
+
+  .summary{
+    flex-direction: column;
+    flex-wrap: wrap;
+    height:auto;
+    .summaryItem{
+      // max-width: 49%;
+      // min-width: 49%;
+    }
+    .summaryItemTitle{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      min-height: 0;
+    }
+    .summaryItemContent{
+      font-size: 20px;
+    }
+    .sepaVertical{
+      height: 1px;
+      width: 60%;
+      margin-top: 10px;
+    }
+  }
+  .wrapTabView{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .titleService{
+    font-size: 26px;
+  }
+}
+

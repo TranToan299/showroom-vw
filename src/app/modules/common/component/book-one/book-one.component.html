@@ -1,0 +1,328 @@
+<div
+  [ngClass]="(currentProduct==='viloran' && this.currentRoute === '/viloran/prebooking') ? 'wrap book-one-component' : currentRoute === '/viloran/deposit' ? 'wrap book-one-component deposit' :  'wrap'"
+  (click)="onHideImage($event)">
+  <p-carousel [autoplayInterval]="autoPlayInterval" *ngIf="currentProduct==='viloran'" [value]="listImage">
+    <ng-template let-image pTemplate="item">
+      <img class="carou-image" [src]="image.ImageUrl" [alt]="'viloran'" />
+    </ng-template>
+  </p-carousel>
+
+  <div class="container mt-4" *ngIf="currentProduct==='viloran'">
+    <div class="text-center mt-2 mb-5">
+      <p class="section-title light"><strong>VILORAN – Dòng xe MPV flagship của Volkswagen với nhiều trang bị tiện nghi cao cấp
+        hạng thương gia, thiết kế hiện đại, hệ thống vận hành và tiêu chuẩn an toàn vượt trội đến từ Đức.</strong> <br /> 
+      <span class="section-title span">
+        Dòng xe phù
+        hợp với các thương gia, doanh nghiệp và gia đình nhiều thế hệ thích tận hưởng các chuyến du lịch. Viloran còn
+        được ưu ái là “Villa di động” chuyên đồng hành với “ <strong style="color: red;" >giới Celebrities</strong> ” trong mỗi hành trình lưu diễn. Có thể
+        khẳng định Viloran là một chiếc “chuyên cơ mặt đất” MPV có kích thước lớn nhất của Thương hiệu Volkswagen và
+        phân khúc xe MPV đang bán hiện hữu tại Việt Nam.
+      </span></p>
+    </div>
+  </div>
+
+
+  <div class="container" *ngIf="currentProduct==='viloran'">
+    <div class="row section">
+      <div class="section-title mb-2">
+        Viloran là dòng MPV cao cấp hạng thương gia, đẳng cấp Đức 
+        có kích thước lớn nhất của thương hiệu Volkswagen
+        
+      </div>
+      <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/3+BANNER_NHE-02.jpg" alt="">
+    </div>
+  </div>
+
+  <div *ngIf="currentProduct==='viloran'">
+    <div class="row section d-flex justify-content-between">
+
+      <div class="col-12 col-md-4 mt-3 left-content">
+        <div class="section-title">Hàng ghế hạng thương gia</div>
+        <div class="mt-4">
+          <ul>
+            <li class="mb-2" style="font-size: 17px;" >Chất liệu da ghế cao cấp, mang lại trải nghiệm tương tác mềm mại và thoải mái.</li>
+            <li class="mb-2" style="font-size: 17px;" >Hai hàng ghế bố trí riêng biệt, có bệ tì tay riêng, khay để ly riêng, khay để điện thoại, cổng sạc, hộc chứa đồ, cụm công tắc điều khiển riêng và có lối đi ở giữa.</li>
+            <li class="mb-2" style="font-size: 17px;" >Trang bị công tắc điều chỉnh ghế hành khách phía trước.</li>
+            <li class="mb-2" style="font-size: 17px;" >Bố trí bệ đỡ chân điều chỉnh điện, có khả năng chỉnh góc 90 độ.</li>
+            <li class="mb-2" style="font-size: 17px;" >Điều chỉnh điện chức năng nghiêng lưng ghế tối đa 70 độ.</li>
+            <li class="mb-2" style="font-size: 17px;" >Chức năng làm mát hoặc sấy ghế.  </li>
+            <li class="mb-2" style="font-size: 17px;" >Chức năng massage 3 chế độ. (+ 3 cường độ)</li>
+            <li class="mb-2" style="font-size: 17px;" >Có gối tựa đầu tạo nên tư thế ngồi, nằm nghỉ thoải mái và thư giãn tối đa.</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-7 mt-3">
+        <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/3+BANNER_NHE-03.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="currentProduct==='viloran'">
+    <div class="row section allow-flex">
+
+      <div class="col-12 col-md-7 mt-3">
+        <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/viloran3.jpg" alt="">
+      </div>
+
+      <div class="col-12 col-md-4 mt-3 right-content">
+        <div class="section-title light"><strong>Hệ thống đèn công nghệ IQ. Light nổi tiếng của Volkswagen hỗ trợ người lái và có tính thẩm mỹ cao.</strong> <br /> 
+          <span class="section-title span" >Người lái sẽ yên tâm khi lái xe vào buổi tối nhờ khả năng chiếu sáng tối ưu, không làm chói mắt người lái xe ngược chiều. Tự tin khi vượt xe, hoặc khi lái xe ở tốc độ cao. Dễ dàng khi tìm xe trong bãi đỗ hoặc về nhà.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div *ngIf="currentProduct==='viloran'">
+    <div class="row section d-flex justify-content-between">
+
+      <div class="col-12 col-md-4 mt-3 left-content">
+        <div class="section-title light"><strong>Hệ thống khung gầm có tỷ trọng thép có khả năng chịu lực cao đạt 77% đảm bảo an toàn cho hành khách.</strong><br />  
+        <span class="section-title span">
+          Khung gầm MQB chắc chắn của Đức, êm ái, không rung lắc. Khung xe cách âm tiếng ồn, không ồn ở tốc độ cao (Kính cách âm APVB 4,96mm) mang đến sự thoải mái và không gây mệt mỏi cho hành khách. Và hàng loạt các trang bị tiện nghi, hiện đại và an toàn khác trên dòng MPV cao cấp hạng thương gia, đến từ thương hiệu Đức lừng danh.
+        </span></div>
+      </div>
+      <div class="col-12 col-md-7 mt-3">
+        <img
+       
+        src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/viloran4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5" *ngIf="currentProduct==='viloran'">
+    <div class="top-title" *ngIf="currentProduct==='viloran'">
+      <p>Đặt trước dòng xe <strong>MPV</strong> Cao cấp <strong>hạng thương gia</strong></p>
+      <p>đẳng cấp <strong>Đức</strong></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row detail mt-3" *ngIf="objProduct.products.length">
+      <div class="col-12 col-md-6 order-3 order-md-1">
+        <img  [ngClass]="currentProduct==='viloran' ? 'viloran-img' : 'item-img'" src="{{
+            objProduct.product.colorsExterior[objProduct.IndexInColorsExterior]
+              .image
+          }}" alt="" />
+      </div>
+      <div class="col-12 col-md-6 info order-2">
+        <h3 class="text-center productName">{{ objProduct.product.Name }}</h3>
+        <p-divider></p-divider>
+        <div class="price">
+          <div class="mt-4 d-flex justify-content-center">
+            <div *ngIf="currentProduct==='viloran'">Giá khuyến nghị từ</div>
+            <div *ngIf="currentProduct!=='viloran'">Giá công bố</div>
+            <div class="price-value">
+              {{ formatMoney(objProduct.product.Price) }} ₫
+            </div>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <div>Số tiền đặt cọc</div>
+            <div class="price-value" style="color: #28a745">
+              {{ formatMoney(objProduct.product.Deposit) }} ₫
+            </div>
+          </div>
+        </div>
+        <div class="version">
+          <div class="font-weight-bold text-center mt-3" style="color: #212529">
+            Lựa chọn phiên bản xe
+          </div>
+          <div class="d-flex justify-content-center">
+            <div *ngFor="let pro of objProduct.products; let i = index" class="version-option-item"
+              [attr.data-index]="i" (click)="clickVersion($event)" class="version-item {{ i == 0 ? 'active' : '' }}">
+              {{ pro.Version }}
+            </div>
+          </div>
+        </div>
+        <div class="color">
+          <div class="font-weight-bold text-center mt-3" style="color: #212529" style="color: #212529">
+            Lựa chọn màu ngoại thất
+          </div>
+          <div class="d-flex justify-content-center">
+            <div *ngFor="
+                let color of objProduct.product.colorsExterior;
+                let i = index
+              ">
+              <div class="color-item  exterior-color {{
+                  i == objProduct.IndexInColorsExterior ? 'active' : ''
+                }} " [attr.data-index]="i" (click)="clickExterior($event)" [style.backgroundColor]="color.color"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center" *ngIf="currentProduct=='touareg'" style="margin-top:15px;">
+            <a class="btnBlue" style="padding: 10px 60px;" (click)="clickScrollDetail($event)">Thông tin sản phẩm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- info customer -->
+    <div class="row form justify-content-center mt-5">
+      <h3 class="col-12 text-center">Thông tin khách hàng</h3>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <div class="field mt-3">
+          <label for="typeCustomer" class="d-block">Quý khách là? <span class="required">*</span></label>
+          <p-dropdown id="typeCustomer" [options]="objCustomer.typeCustomers" [(ngModel)]="objCustomer.typeCustomer"
+            [showClear]="true" [style]="{ width: '100%' }" optionLabel="name" optionValue="code" placeholder="Chọn">
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label for="name" class="d-block">Họ tên cá nhân <span class="required">*</span></label>
+          <input type="text" id="name" pInputText [(ngModel)]="objCustomer.name" [style]="{ width: '100%' }" />
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label for="identityCard" class="d-block">CMND/CCCD <span class="required">*</span></label>
+          <input type="text" id="identityCard" pInputText [(ngModel)]="objCustomer.identityCard"
+            [style]="{ width: '100%' }" />
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label for="phone" class="d-block">Số điện thoại <span class="required">*</span></label>
+          <p-inputMask id="phone" [style]="{ width: '100%' }" mask="9999 999 999" [(ngModel)]="objCustomer.phone">
+          </p-inputMask>
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label for="email" class="d-block">Email <span class="required">*</span></label>
+          <input type="text" pInputText [(ngModel)]="objCustomer.email" [style]="{ width: '100%' }" />
+        </div>
+      </div>
+    </div>
+    <!-- dealer -->
+    <div class="row form justify-content-center mt-5">
+      <h3 class="col-12 text-center">Lựa chọn showroom mua xe</h3>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Tỉnh thành <span class="required">*</span></label>
+          <p-dropdown id="province" [options]="objDealer.provinces" [(ngModel)]="objDealer.province" [showClear]="true"
+            [filter]="true" optionLabel="name" optionValue="code" [style]="{ width: '100%' }"
+            placeholder="Chọn tỉnh thành">
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Showroom/Đại lý<span class="required">*</span></label>
+          <p-dropdown id="dealer" [options]="objDealer.dealers[objDealer.province]" [(ngModel)]="objDealer.dealer"
+            [showClear]="true" [filter]="true" optionLabel="name" optionValue="Id" [style]="{ width: '100%' }"
+            placeholder="Chọn đại lý" (onChange)="changeDropdownDeader($event)">
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Số điện thoại </label>
+          <input [disabled]="true" type="text" pInputText [(ngModel)]="objDealer.phone" [style]="{ width: '100%' }" />
+        </div>
+      </div>
+      <div class="col-12 col-sm-5 col-lg-4">
+        <div class="field mt-3">
+          <label class="d-block">Email<span class="required">*</span></label>
+          <input [disabled]="true" type="text" pInputText [(ngModel)]="objDealer.email" [style]="{ width: '100%' }" />
+        </div>
+      </div>
+    </div>
+    <!-- checkbox -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-checkbox name="commit" value="commit"
+          label="Tôi cam kết các thông tin đã cung cấp tại đây hoàn toàn chính xác." [(ngModel)]="checkboxs">
+        </p-checkbox>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-checkbox name="read" value="read" label="Tôi đã đọc, hiểu rõ và xác nhận đồng ý với toàn bộ nội dung Điều khoản trong Thỏa Thuận Đặt
+          Cọc trên cũng như Chính Sách Ưu Đãi áp dụng tại thời điểm đặt mua xe ô tô này trên Volkswagen Việt Nam."
+          [(ngModel)]="checkboxs">
+        </p-checkbox>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-checkbox name="agree" value="agree"
+          label="Tôi đồng ý với các Điều kiện & Điều khoản của Volkswagen Việt Nam." [(ngModel)]="checkboxs">
+        </p-checkbox>
+      </div>
+    </div>
+    <!-- radio -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-lg-8 mt-4 my-2">
+        <strong>Hình thức thanh toán</strong>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-radioButton name="pay" value="thanh toán qua thẻ tín dụng" label="Thanh toán qua thẻ tín dụng"
+          [(ngModel)]="pay"></p-radioButton>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-radioButton name="pay" value="thanh toán qua thẻ ATM nội địa/Internet Banking"
+          label="Thanh toán qua thẻ ATM nội địa/Internet Banking" [(ngModel)]="pay">
+        </p-radioButton>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-radioButton name="pay" value="thanh toán qua chuyển khoản ngân hàng"
+          label="Thanh toán qua chuyển khoản ngân hàng" [(ngModel)]="pay">
+        </p-radioButton>
+      </div>
+      <div class="col-12 col-sm-10 col-lg-8">
+        <p-radioButton name="pay" value="thanh toán trực tiếp" label="Thanh toán trực tiếp" [(ngModel)]="pay">
+        </p-radioButton>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="row justify-content-center my-5">
+      <div class="btnBlue" (click)="submit()">Đặt hàng</div>
+    </div>
+  </div>
+
+
+  <div id="touareg-content" *ngIf="currentProduct==='touareg'">
+    <p-divider></p-divider>
+    <app-touareg [isDeposit]="true"></app-touareg>
+  </div>
+
+  <img *ngIf="currentProduct==='viloran'"
+    src="https://vw-image.s3.ap-southeast-1.amazonaws.com/image/3-BANNER_COMBINE.jpg" [alt]="'viloran'" />
+
+
+  <div class="toast-thank hidden">
+    <div class="content">
+      <div class="logo">
+        <img src="./assets/images/logoBlue.svg" alt="" width="100" />
+      </div>
+      <div class="text-thank">
+        Cám ơn bạn đã lựa chọn dòng xe <span>Volkswagen</span>
+      </div>
+      <div class="will">
+        Đại lý chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.
+      </div>
+      <div class="text-thank2">Trân trọng cám ơn!</div>
+      <div class="name">Volkswagen Việt Nam</div>
+      <div class="wrap-btnBlue">
+        <a [routerLink]="'/'" class="btnBlue">Trở về trang chủ</a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="currentProduct==='touareg'">
+    <div *ngIf="isShowImage" class="show-image">
+      <img class="book-image" (click)="onHideImage($event)" src="../../../../../assets/images/book.jpg" alt="">
+      <div (click)="onHideImage($event)" class="book-now">
+        Đặt cọc ngay
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container">
+  <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-menu-right></app-menu-right>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

@@ -1,0 +1,147 @@
+<div class="btnForMobile">
+  <div class="zoomOwn btnDoawload " >Tải Brochure</div>
+</div>
+<div class="wrapTab">
+  <div class="tabs sticky-top ">
+    <div class="nameProduct">Tiguan Allspace</div>
+    <div class="tab-item active">
+      Tính năng nổi bật
+    </div>
+    <div class="tab-item">
+      Ngoại thất
+    </div>
+    <div class="tab-item">
+      Nội thất
+    </div>
+    <div class="tab-item">
+      Công nghệ
+    </div>
+    <div class="tab-item">
+      Thông số kỹ thuật
+    </div>
+    <div style="flex:1;text-align: end;">
+      <div class="zoomOwn btnDoawload">Tải Brochure</div>
+    </div>
+    <!-- <div class="line"></div> -->
+  </div>
+  
+  <!-- Tab content -->
+  <div class="tab-content">
+    <div class="tab-pane active ">
+      <div>
+        <div class="titleTabView">Tính năng nổi bật</div>
+        <div class="feature">
+          <img src="./assets/images/tabViewFeature.svg" alt="">
+          <div class="featureInfo">
+            <div class="featureInfoTitle">
+              Đồng hồ trung tâm dạng kỹ thuật số Digital Cockpit
+            </div>
+            <div class="featureInfoContent">
+              Đồng hồ kỹ thuật số 12.3 inch với 3 lựa chọn giao diện hiển thị và tùy chỉnh màu sắc
+            </div>
+            <div class="featureInfoTitle">
+              Hệ thống hỗ trợ đỗ xe Park Assist
+            </div>
+            <div class="featureInfoContent">
+              Việc tìm khoảng trống và đỗ xe thật dễ dàng với hệ thống hỗ trợ đỗ xe Park Assist.
+            </div>
+            <div class="featureInfoTitle">
+              Gói quan sát xung quanh Area View
+            </div>
+            <div class="featureInfoContent">
+              Quan sát xung quanh xe với camera 360 hiển thị dạng 3D với độ phân giải cao
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane">
+      <div class="titleTabView">Ngoại thất</div>
+      <div class="outside">
+        <div class="wrapOutsideInfo">
+          <div class="outsideInfo">
+            <div class="outsideInfoTitle">
+              Diện mạo ấn tượng
+            </div>
+            <div class="outsideInfoContent">
+              Những đường nét thiết kế mạnh mẽ, hiện đại nhưng đầy tinh tế, tạo ấn tượng mạnh ngay từ lần đầu bắt gặp.
+            </div>
+          </div>
+          <img src="./assets/images/tabViewOutside.svg" alt="" class="imgOutSide">
+        </div>
+        <div class="wrapOutsideImage">
+          <div class="nameCarLow">Tiguan Allspace</div>
+          <img src="./assets/images/carOutside.svg" alt="">
+        </div>
+        <div class="outsideTool">
+          <div class="outsideToolColor">
+            <div style="color:black;font-size: 20px;font-weight: normal;">Ngoại thất</div>
+            <div class="wrapColor">
+              <div class="circle circleRed"></div>
+              <div class="circle circleBlue circleBig"></div>
+              <div class="circle circleYellow"></div>
+              <div class="circle circleGreen"></div>
+              <div class="circle circleBlack"></div>
+            </div>
+
+          </div>
+          <div class="outsideToolView">
+            <img src="./assets/images/view360.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane">
+      <div class="titleTabView">Nội thất</div>
+      <div class="inside">
+        <p-carousel [value]="listInfoInside" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000" [responsiveOptions]="responsiveOptions">
+          <ng-template let-product pTemplate="item">
+            <div class="insideContent">
+              <img src="{{product.image}}" style='width:100%'/>
+              <div class="insideLayer"></div>
+              <div class="insideContenText">
+                <div class="insideContentitle">{{product.title}}</div>
+                <div class="insideContenDesMain">{{product.desMain}}</div>
+                <div class="insideContenDesDetail">{{product.desDetail}}</div>
+
+              </div>
+            </div>
+
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+    <div class="tab-pane">
+      <div class="titleTabView">Công nghệ</div>
+      <div class="tech" style="display:flex">
+        <div style="height:550px;background:#00437A;flex:1"></div>
+        <div style="flex:2;display:flex;align-items: center;">
+          <div style="display:flex;flex-direction: column;flex:1" >
+            <div style="height:250px;background: rgba(0, 67, 122, 0.8)"></div>
+            <div style="height:250px;background: rgba(0, 67, 122, 0.6)"></div>
+          </div>
+          <div style="height:500px;background: rgba(0, 67, 122, 0.4);flex:1"></div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="tab-pane">
+      <div class="titleTabView">Thông số kỹ thuật</div>
+      <div class="tech" style="display:flex">
+        <div style="height:550px;background:#00437A;flex:1"></div>
+        <div style="flex:2;display:flex;align-items: center;">
+          <div style="display:flex;flex-direction: column;flex:1" >
+            <div style="height:250px;background: rgba(0, 67, 122, 0.8)"></div>
+            <div style="height:250px;background: rgba(0, 67, 122, 0.6)"></div>
+          </div>
+          <div style="height:500px;background: rgba(0, 67, 122, 0.4);flex:1"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

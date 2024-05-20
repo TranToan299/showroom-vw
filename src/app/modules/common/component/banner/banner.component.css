@@ -1,0 +1,66 @@
+.wrapper {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #191919;
+  margin-top: 100px;
+}
+
+.wrap{
+  position: absolute;
+  top:50%;
+  left: 80px;
+  color:white;
+  transform: translateY(-50%);
+  user-select: none;
+}
+.name{
+  font-family: VW Head;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 76px;
+}
+/* .name div:first-child {
+  font-weight: 200;
+} */
+.title{
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 56px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+.customBtn{
+  border: 2px #fff solid;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.iframe{
+  height:100vh;
+}
+
+@media only screen and (max-width:420px){
+  .wrap{
+    left: 20px;
+  }
+  .name div{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .title{
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  .iframe{
+    height:50vh;
+  }
+}

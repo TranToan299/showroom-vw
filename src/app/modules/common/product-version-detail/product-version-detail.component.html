@@ -1,0 +1,39 @@
+<div class="container">
+    <h3 class="product-version__name text-center">
+        {{productVersion.name}}
+    </h3>
+    <p class="product-version__price text-center">
+        {{productVersion.price}}
+    </p>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img [src]="productVersion.image" alt="">
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item" *ngFor="let item of productVersion.listInfo; let last = last">
+                    <div *ngIf="!last">
+                        <p class="product-version__item__title">
+                            {{item.name}}
+                        </p>
+                        <span class="product-version__item__text">
+                            {{item.value}}
+                        </span>
+
+                    </div>
+                    <div class="row" *ngIf="last">
+                        <div class="mr-2">
+                            <app-button name="Đặt ngay" type="primary" [link]="productVersion.linkOrder"
+                                size="small"></app-button>
+                        </div>
+                        <div class="">
+                            <app-button name="Lái thử" type="secondary" [link]="productVersion.linkTrial"
+                                size="small"></app-button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

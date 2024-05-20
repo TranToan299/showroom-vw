@@ -1,0 +1,14 @@
+.wrap-name {
+  min-width: 50%;
+  background: #00285c;
+  display: inline-block;
+}
+
+@media only screen and (max-width:576px) {
+
+  .wrap-name {
+    width: 100%;
+  }
+  
+
+}

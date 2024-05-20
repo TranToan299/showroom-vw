@@ -1,0 +1,85 @@
+.wrap{
+  position: relative;
+  padding-top: 100px;
+  .choose{
+    .cars{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .car{
+        margin: 10px;
+        position: relative;
+        cursor: pointer;
+        img{
+          width: 170px;
+          object-fit: cover;
+        }
+      }
+      .active::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        height: 2px;
+        background: #2C72C6;
+      }
+    }
+  }
+
+}
+.toast-container{
+    z-index:9999999;
+    position: fixed;
+    top:0;
+    right:0;
+}
+.required{
+  color:#2C76C8;
+}
+:host ::ng-deep .p-accordion-header-link{
+  text-decoration: none;
+}
+:host ::ng-deep .field-radiobutton label{
+  margin-left: 8px;
+  margin-bottom: 0px
+}
+.btnBlue{
+  background: rgb(0, 30, 80);
+  padding: 10px 20px;
+  color:#fff;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.btnBlue:hover{
+  background: #2C72C6;
+}
+@media only screen and (max-width:576px){
+  .wrap{
+    padding-top: 50px;
+    
+
+  }
+
+  .title {
+    padding-top: 30px;
+  }
+}
+.carItem:nth-child(7) {
+  display: none;
+}
+.carItem:nth-child(8) {
+  .icon {
+    transform: scale(1.2);
+    height: 95px;
+  }
+
+  .pvw-title span {
+    display: none;
+  }
+
+  .pvw-title:after {
+    content: 'Virtus';
+  }
+}

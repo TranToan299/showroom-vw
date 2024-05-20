@@ -1,0 +1,236 @@
+<div class="wrap">
+    <img src="./assets/images/owner/Accessory-pc.webp" alt="" class="banner" id="accessoryBanner">
+    <app-owner-main-title [title]="title.title" [description]=""></app-owner-main-title>
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title">{{this.title1.title}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-100">
+        <div class="col-12 col-sm-12 col-lg-7 col-xl-7 justify-content-center d-flex">
+            <div style="min-width:300px; max-width: 1024px; margin-bottom:30px;">
+                <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-1.webp" />
+
+                <div style="padding:0 30px 0 30px;">
+                    <div class="left-title-container" style="margin-top:30px;">
+                        <h2 class="title">Phụ kiện hỗ trợ vận chuyển dành cho xe của bạn</h2>
+                    </div>
+                    <p>Chiếc Volkswagen của bạn sẽ được trang bị đầy đủ cho hành trình sắp tới</p>
+                    <a href="https://www.vw.com.vn/vi/owner/accessories/transport.html" class="link">Tìm hiểu thêm</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-sm-12 col-lg-5 col-xl-5 justify-content-center d-flex" >
+            <div style="width: 100%;">
+                <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-2.webp" />
+                <div style="padding:0 30px 0 30px;">
+                    <div class="left-title-container" style="margin-top:26px;">
+                        <h2 class="title">Mang đậm chất Volkswagen</h2>
+                    </div>
+                    <p>Những chiếc xe mô hình, hoặc bộ sưu tập cổ điển – điều khiến người hâm mộ của Volkswagen thích
+                        thú.
+                        Khám phá những phụ kiện phong cách đa dụng: hiện đại và sáng tạo.</p>
+                    <a href="https://www.vw.com.vn/vi/owner/accessories/lifestyle.html" class="link">Tìm hiểu thêm</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title" style="max-width:800px !important; padding:0px !important; font-size:50px;">Tiện nghi
+                    và bảo vệ dành cho chiếc Volkswagen của bạn</h2>
+                <div style="margin:30px 0 0 50px; max-width:800px !important;" class="content">
+                    <p>Bạn chỉ cần tập trung vào việc lái xe - sản phẩm của chúng tôi cung cấp cho bạn và xe sự bảo vệ
+                        khỏi những yếu tố gây xao nhãng. Liên hệ với các đại lý ủy quyền của chúng tôi để đặt hàng.</p>
+                    <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="link">Tìm đại lý ủy quyền
+                        của
+                        Volkswagen</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-100">
+        <div class="col-12 col-sm-12 col-lg-7 col-xl-7 justify-content-center d-flex">
+            <div style="min-width:480px; max-width: 1024px;">
+                <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-3.webp" />
+                <img style="margin-top:30px;"
+                    src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-4.webp" />
+            </div>
+
+        </div>
+
+        <div class="col-12 col-sm-12 col-lg-5 col-xl-5 justify-content-center d-flex">
+            <app-owner-list *ngIf="this.list" [title]="this.list.title" [items]="this.list.items"
+                [description]="this.list.description"></app-owner-list>
+        </div>
+    </div>
+
+    <div class="row mt-100 dock-title">
+        <div class="row" style="width:100%; align-items:center;">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title" style="max-width:800px">Thảm lót sàn: mang đến sự thoải
+                    mái và bảo vệ nội thất xe của bạn</h2>
+            </div>
+        </div>
+    </div>
+
+    <app-owner-photo-gallery *ngIf="this.gallery" [title]="this.gallery.title" [description]="this.gallery.description"
+        [link]="this.gallery.link" [items]="this.gallery.items">
+    </app-owner-photo-gallery>
+
+    <div class="row mt-100 float-title" style="position: relative; top:-180px;">
+        <div class="row" style="width:100%; align-items:center;">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title titleFixed" id="relative-title" style="max-width:800px">Thảm lót sàn: mang đến sự thoải
+                    mái và bảo vệ nội thất xe của bạn</h2>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;" class="d-flex align-items-center flex-md-column row">
+        <h2 class="title col-12 col-sm-12 col-lg-8 col-xl-8 "
+            style="max-width:800px !important; font-size:36px; padding-top:50px;">Tối ưu
+            hóa để phù hợp với kích thước sàn xe, thảm lót sàn của chúng tôi giúp bảo vệ nội thất xe.</h2>
+        <div class="col-12 col-sm-12 col-lg-7 col-xl-7 ">
+            <app-owner-list *ngIf="this.list1" [title]="this.list1.title" [items]="this.list1.items"
+                [description]="this.list1.description"></app-owner-list>
+        </div>
+    </div>
+
+    <div class="row mt-100">
+        <div class="col-12 col-sm-12 col-lg-7 col-xl-7 justify-content-center d-flex">
+            <div style="min-width:480px; max-width: 1024px;">
+                <div id="instructions">
+                    <video id="my_video_1" class="video-js vjs-default-skin" width="100%" controls preload="none"
+                        poster='https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-9.webp'
+                        data-setup='{ "aspectRatio":"3:2", "playbackRates": [1, 1.5, 2] }'>
+                        <source
+                            src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/Ph%E1%BB%A5+ki%E1%BB%87n+ch%C3%ADnh+h%C3%A3ng+cho+b%E1%BA%A1n+v%C3%A0+xe+VW+%C4%91%C3%A3+%C4%91%C6%B0%E1%BB%A3c+trang+b%E1%BB%8B+-+Volkswagen+Vi%E1%BB%87t+Nam.mp4"
+                            type='video/mp4' />
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-lg-5 col-xl-5 justify-content-center d-flex" style="padding:0 50px 0 50px;">
+            <div style="width: 100%;">
+                <div class="left-title-container" style="margin-top:26px;">
+                    <h2 class="title">Ghế ngồi ô tô trẻ em phù hợp</h2>
+                </div>
+                <p>Chúng tôi cung cấp ghế ngồi ô tô phù hợp cho trẻ em ở mọi lứa tuổi và nhu cầu. Thoải mái tùy chỉnh độ
+                    cao phù hợp, dây an toàn hoặc tay cầm: Tham khảo video</p>
+                <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="link">Tìm đại lý ủy quyền
+                    Volkswagen</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-100">
+        <div class="row" style="flex:1; justify-content: center;">
+            <div class="col-12 col-sm-12 col-lg-8 col-xl-8" style="max-width:1024px;">
+                <p-accordion>
+                    <div *ngFor="let item of content">
+                        <p-accordionTab header="{{item.header}}">
+                            <app-owner-list [title]="item.title" [items]="item.items" [description]="item.description">
+                            </app-owner-list>
+                        </p-accordionTab>
+                    </div>
+
+                    <!-- <p-accordionTab header="G0 Plus ISOFIX">
+                        <app-owner-list *ngIf="this.list3" [title]="this.list1.title" [items]="this.list3.items"
+                            [description]="this.list3.description"></app-owner-list>
+                    </p-accordionTab>
+                    <p-accordionTab header="G1 ISOFIX DUO plus Top Tether">
+                        <app-owner-list *ngIf="this.list1" [title]="this.list1.title" [items]="this.list1.items"
+                            [description]="this.list1.description"></app-owner-list>
+                    </p-accordionTab>
+                    <p-accordionTab header="G2-3 ISOFIT">
+                        <app-owner-list *ngIf="this.list1" [title]="this.list1.title" [items]="this.list1.items"
+                            [description]="this.list1.description"></app-owner-list>
+                    </p-accordionTab>
+                    <p-accordionTab header="G2-3 ISOFIT (GTI Design)">
+                        <app-owner-list *ngIf="this.list1" [title]="this.list1.title" [items]="this.list1.items"
+                            [description]="this.list1.description"></app-owner-list>
+                    </p-accordionTab> -->
+                </p-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-100">
+        <div class="row" style="width:100%; align-items:center; justify-content:center">
+            <div style="padding:0 50px 0 50px;">
+                <h2 class="title" style="max-width:800px !important; padding:0px !important;">Tận hưởng
+                    sự thoải mái và an toàn trên hành trình: hệ thống giải trí và điều hướng</h2>
+                <div style="margin:30px 0 0 50px; max-width:800px !important;" class="content">
+                    <p>Hành trình và đích đến - với các hệ thống của chúng tôi, bạn sẽ tìm thấy tuyến đường đi dễ dàng
+                        nhất đồng thời có thể tận hưởng các dịch vụ giải trí trên suốt chặng đường. Đặt hàng hệ thống
+                        giải trí và điều hướng từ các đại lý đáng tin cậy của chúng tôi.</p>
+                    <a href="https://www.vw.com.vn/vi/volkswagen-dealer-search.html" class="link">Tìm đại lý ủy quyền
+                        của
+                        Volkswagen</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-100 justify-content-around">
+        <div class="col-12 col-sm-12 col-lg-5 col-xl-5">
+            <div style="min-width:480px; max-width: 1024px;">
+                <div id="instructions" style="margin-bottom: 30px;">
+                    <video id="my_video_1" class="video-js vjs-default-skin" width="100%" controls preload="none"
+                        poster='https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-10.webp'
+                        data-setup='{ "aspectRatio":"3:2", "playbackRates": [1, 1.5, 2] }'>
+                        <source
+                            src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/Ph%E1%BB%A5+ki%E1%BB%87n+ch%C3%ADnh+h%C3%A3ng+cho+b%E1%BA%A1n+v%C3%A0+xe+VW+%C4%91%C3%A3+%C4%91%C6%B0%E1%BB%A3c+trang+b%E1%BB%8B+-+Volkswagen+Vi%E1%BB%87t+Nam_2.mp4"
+                            type='video/mp4' />
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-sm-10 col-lg-5 col-xl-5">
+            <div style="width: 100%;">
+                <p style="font-weight: bold; font-size:1.4rem;">Mang lại niềm vui trên suốt hành trình</p>
+                <p style="margin-bottom:0px;">Hữu ích và tiện lợi</p>
+                <p>Tham khảo video để biết thêm về các phụ kiện hỗ trợ như móc treo đồ trên xe, giá đỡ ipad...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-100 justify-content-around">
+        <div class="col-10 col-sm-10 col-lg-5 col-xl-5 justify-content-center" style="margin-bottom:40px;">
+            <div style="width: 100%;">
+                <p style="font-weight: bold; font-size:1.4rem;">Bộ đệm chân phanh, chân ga</p>
+                <p style="margin-bottom:0px;">Thiết kế chức năng dành cho chân phanh, chân ga: Bộ đệm chất lượng cao từ
+                    Phụ kiện của Volkswagen sẽ chinh phục bạn với độ bám tuyệt vời và phong cách thể thao.</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-6 col-xl-6 justify-content-center">
+            <img src="https://vw-image.s3.ap-southeast-1.amazonaws.com/video/accessory-11.webp" />
+        </div>
+    </div>
+
+    <div class="mt-100">
+        <app-owner-reference *ngIf="this.reference" [title]="reference.title" [description]="reference.description"
+            [link]="reference.link">
+        </app-owner-reference>
+    </div>
+</div>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

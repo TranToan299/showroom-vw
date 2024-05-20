@@ -1,0 +1,82 @@
+<div class="wrap">
+    <img src="./assets/images/owner/informationBanner-pc.webp" alt="" class="banner" id="informationBanner">
+</div>
+<ng-container *ngFor="let item of content">
+
+    <!-- <div class="video-container">
+        <app-owner-banner2 *ngIf="item.component=='owner-banner'" [video]="item.video"></app-owner-banner2>
+    </div> -->
+
+    <!-- <div class="video-container">
+        <app-owner-banner *ngIf="item.component=='owner-banner'" [image]="item.image"></app-owner-banner>
+    </div> -->
+
+    <app-owner-main-title *ngIf="item.component=='owner-main-title'" [title]="item.title"
+        [description]="item.description"></app-owner-main-title>
+
+    <app-owner-title *ngIf="item.component=='owner-title'" [title]="item.title" [margin]="2"></app-owner-title>
+
+    <app-owner-detail-vertical *ngIf="item.component=='owner-detail-vertical'" [items]="item.items">
+    </app-owner-detail-vertical>
+    <app-owner-detail-vertical2 *ngIf="item.component=='owner-detail-vertical2'" [items]="item.items">
+    </app-owner-detail-vertical2>
+
+    <div *ngIf="item.component=='owner-split-horizontal'" class="row mt-50">
+        <div class="col-12 col-sm-12 col-lg-6 col-xl-6 center-container">
+            <app-owner-image *ngIf="item.image1.component=='owner-image'" [image]="item.image1.image"
+                [title]="item.image1.title">
+            </app-owner-image>
+            <app-owner-title *ngIf="item.title1.component=='owner-title'" [title]="item.title1.title" [margin]="1"></app-owner-title>
+            <app-owner-list *ngIf="item.list1.component=='owner-list'" [title]="item.list1.title" [items]="item.list1.items"
+                    [description]="item.list1.description" [subTitle]="item.list1.subTitle"></app-owner-list>
+            <!-- <app-owner-detail-horizontal *ngIf="item.horizontal1.component=='owner-detail-horizontal'"
+                [title]="item.horizontal1.title" [image]="item.horizontal1.image" [items]="item.horizontal1.items"
+                [description]="item.horizontal1.description" [link]="item.horizontal1.link"
+                [subTitle]="item.horizontal1.subTitle"></app-owner-detail-horizontal> -->
+        </div>
+        <div class="col-12 col-sm-12 col-lg-6 col-xl-6 center-container">
+            <app-owner-image *ngIf="item.image1.component=='owner-image'" [image]="item.image2.image"
+                [title]="item.image2.title">
+            </app-owner-image>
+            <app-owner-title *ngIf="item.title1.component=='owner-title'" [title]="item.title1.title" [margin]="1"></app-owner-title>
+            <app-owner-list *ngIf="item.list2.component=='owner-list'" [title]="item.list2.title"  [items]="item.list2.items"
+                    [description]="item.list2.description" [subTitle]="item.list2.subTitle"></app-owner-list>
+            <!-- <app-owner-detail-horizontal *ngIf="item.horizontal2.component=='owner-detail-horizontal'"
+                [title]="item.horizontal2.title" [image]="item.horizontal2.image" [items]="item.horizontal2.items"
+                [description]="item.horizontal2.description" [link]="item.horizontal2.link"
+                [subTitle]="item.horizontal2.subTitle"> </app-owner-detail-horizontal> -->
+        </div>
+    </div>
+
+
+    <app-owner-detail-horizontal *ngIf="item.component=='owner-detail-horizontal'" [title]="item.title"
+        [image]="item.image" [items]="item.items" [description]="item.description" [link]="item.link"
+        [subTitle]="item.subTitle" [reverse]="item.reverse">
+    </app-owner-detail-horizontal>
+    <app-owner-photo-gallery *ngIf="item.component=='owner-photo-gallery'" [title]="item.title"
+        [description]="item.description" [link]="item.link" [items]="item.items">
+    </app-owner-photo-gallery>
+    <app-owner-reference *ngIf="item.component=='owner-reference'" [title]="item.title" [description]="item.description"
+        [link]="item.link">
+    </app-owner-reference>
+    <app-owner-list *ngIf="item.component=='owner-list'" [title]="item.title" [items]="item.items"
+        [description]="item.description"></app-owner-list>
+    <app-owner-p *ngIf="item.component=='owner-p'" [content]="item.content"></app-owner-p>
+    <app-owner-image *ngIf="item.component=='owner-image'" [image]="item.image" [title]="item.title"></app-owner-image>
+
+    <app-owner-accordion *ngIf="item.component=='owner-accordion'" [title]="item.title" [items]="item.items">
+    </app-owner-accordion>
+    <app-owner-accordion2 *ngIf="item.component=='owner-accordion2'" [title]="item.title" [items]="item.items">
+    </app-owner-accordion2>
+
+    <app-owner-link-list *ngIf="item.component=='owner-link-list'" [items]="item.items"></app-owner-link-list>
+    <app-owner-text-info *ngIf="item.component=='owner-text-info'" [title]="item.title" [items]="item.items">
+    </app-owner-text-info>
+
+</ng-container>
+
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

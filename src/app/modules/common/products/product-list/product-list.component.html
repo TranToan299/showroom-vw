@@ -1,0 +1,23 @@
+<img src="./assets/images/bannerProduct.svg" alt="" style="width:100vw">
+<app-filter-product></app-filter-product>
+<div class="product">
+  <div class="title">Sản phẩm</div>
+  <div class="product-item-list">
+    <div class="product-item" *ngFor="let product of products">
+      <div class="product-item-content" [style.backgroundColor]="colorCars[product.name]">
+        <img src="{{backgroundCars[product.name]}}" alt="" class="bg">
+        <div class="layer"></div>
+        <img class="car" src="{{product.image}}" width="380">
+        <div class="info d-flex flex-column align-items-start">
+          <h5 class="p-mb-1 pt-2">{{product.name}}</h5>
+          <h6 class="p-mt-0 p-mb-3" style="font-weight: 400;">{{product.description}}</h6>
+        </div>
+      </div>
+      <div class="wrapbtn">
+        <a href="#" class="detail btnHover">
+          Khám phá ngay
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

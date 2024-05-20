@@ -1,0 +1,95 @@
+.recall-info {
+    margin-top: 1.5rem;
+    .title {
+        font-weight: 700;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .content {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .news-title {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .news-list {
+        margin-top: 48px;
+
+        .news-item {
+            margin-bottom: 1.4rem ;
+        }
+
+        .image {
+            width: 100%;
+            margin-bottom: 10px;
+            min-height: 300px;
+        }
+
+        .date {
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .title {
+            margin-top: 0px;
+            margin-bottom: 18px;
+            a {
+                text-decoration: none;
+                font-size: 1.8rem;
+                color: #000;
+                line-height: 14px;
+
+                &:hover {
+                    color: #003b88;
+                    transition: 0.3s all ease-in-out
+                }
+            }
+        }
+
+        .desc {
+            font-size: 1.4rem;
+        }
+        .details {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 18px;
+
+            a {
+                color: #000;
+                text-decoration: none;
+                border-bottom: 1px solid #000;
+
+                &:hover {
+                    color: #003b88;
+                    transition: 0.2s all ease-in-out;
+                    border-bottom: 1px solid #003b88;
+                }
+            }
+        }
+    }
+
+    .next-page {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 18px;
+        span {
+            border-bottom: 1px solid #000;
+            &:hover {
+                color: #003b88;
+                cursor: pointer;
+                transition: 0.2s all ease-in-out;
+                border-bottom: 1px solid #003b88;
+            }
+        }
+    }
+}

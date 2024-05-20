@@ -1,0 +1,160 @@
+
+.filter{
+  margin: 60px 60px 0 60px;
+  padding: 40px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  .title{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 52px;
+    /* identical to box height, or 144% */
+    
+    text-align: center;
+    
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  .field{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .wrapKey{
+      margin-top: 20px;
+      .fieldTitle{
+        margin-bottom: 4px;
+      }
+    }
+    
+  }
+  .colorItem{
+    display: flex;
+
+    
+  }
+  .circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .wrapBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+}
+
+:host ::ng-deep .p-chips .p-chips-multiple-container {//p-chips-multiple-container
+  width: 300px;
+}
+:host ::ng-deep .p-multiselect {
+  width: 300px;
+}
+
+.result{
+  display: flex;
+  margin: 60px 60px 60px 60px;
+
+  .resultImage{
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+    img{
+      // max-width: calc(50% - 45px);
+      width: 400px;
+      margin-bottom: 30px;
+      
+
+    }
+  }
+  .resultItem{
+    flex:1;
+    .name{
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .resultItemBody{
+      max-width: 580px;
+      .resultItemInfo{
+        display: flex;
+        .key{
+          width: 50%;
+        }
+        .value{
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+
+// tablet and mobile
+@media only screen and (max-width : 1024px) {
+  .filter{
+    margin: 60px 15px 0 15px;
+    padding: 15px;
+    .field{
+      justify-content: space-between;
+    }
+  }
+  :host ::ng-deep .p-chips .p-chips-multiple-container {//p-chips-multiple-container
+    width: 250px;
+  }
+  :host ::ng-deep .p-multiselect {
+    width: 250px;
+  }
+
+
+  .result{
+    display: flex;
+    margin: 40px 0px 20px 0px;
+    flex-direction: column;
+  
+    .resultImage{
+      display: flex;
+      flex-direction: row;
+      img{
+        // max-width: calc(50% - 45px);
+        width: 250px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+// mobile
+@media only screen and (max-width:414px){
+  .title{
+    font-size: 22px!important;
+  }
+  .filter{
+    .field{
+      justify-content: center;
+    }
+  }
+
+  .result{
+  
+    .resultImage{
+      img{
+        // max-width: calc(50% - 45px);
+        width: 100px;
+        margin-right: 20px;
+      }
+    }
+   
+  }
+  :host ::ng-deep .p-divider.p-divider-horizontal {
+    margin: 4px;
+  }
+}

@@ -1,0 +1,173 @@
+<div class="top-menu"></div>
+<div class="fluid-container">
+  <div class="border">
+    <div class="d-flex flex-column">
+      <div class="title">
+        <h3 style="color: #191919">Đăng ký lái thử</h3>
+        <p style="color: #dddddd">
+          Vui lòng hoàn thành biểu mẫu bên dưới để đặt lịch hẹn lái thử tại đại
+          lý Volkswagen gần bạn. Ngay khi nhận được yêu cầu, đại lý của chúng
+          tôi sẽ liên hệ sắp xếp lịch lái thử.
+        </p>
+      </div>
+      <div class="content">
+        <div class="product-info">
+          <h5>Mẫu xe</h5>
+          <h3>Tiguan Allspace</h3>
+          <img class="pb-4" src="./assets/images/Tiguan.png" />
+          <!-- <h4>Lựa chọn xe</h4>
+                    <div class="product-category">
+                        <h5>Dòng xe</h5>
+                        <ul class="d-flex">
+                            <li *ngFor="let cat of prodCategory">
+                                <div [ngStyle]="{'background-color': cat == categorySelect ? '#e5ecf2' : '#fff' }"
+                                    class="cat-item">
+                                    <input type= "radio" id="{{cat}}" (click)="changeCategory(cat)" name="prodCat"
+                                        value="{{cat}">
+                                    <label style="margin-left: 5px; margin-right: 5px;" for="{{cat}}">{{cat}}</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> -->
+          <div class="product-version pb-4">
+            <h5>Phiên bản</h5>
+            <ul class="d-flex pt-2">
+              <li *ngFor="let ver of prodVersion">
+                <div class="cat-item">
+                  <input
+                    type="radio"
+                    id="{{ ver }}"
+                    (click)="changeCategory(ver)"
+                    name="prodVer"
+                    value="{{ ver }}"
+                  />
+                  <label
+                    style="margin-left: 5px; margin-right: 5px"
+                    for="{{ ver }}"
+                    >{{ ver }}</label
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="product-area">
+            <h5>Ngoại thất</h5>
+            <ul class="d-flex pt-2">
+              <li *ngFor="let color of prodColor">
+                <div
+                  class="color-item"
+                  [ngStyle]="{
+                    'background-color': color.includes('#') ? color : '#fff'
+                  }"
+                ></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ext-info">
+          <div class="location-info">
+            <h5>Các cửa hàng có sản phẩm</h5>
+            <p class="pt-2">Tìm theo đại lý và vị trí</p>
+            <p-dropdown
+              [options]="locations"
+              (onChange)="changeLocation(locationSelect)"
+              [(ngModel)]="locationSelect"
+              optionLabel="name"
+            ></p-dropdown>
+            <div class="lst-location">
+              <ul>
+                <li *ngFor="let detail of detailLocationSelect">
+                  <div class="location-item">
+                    <input
+                      type="radio"
+                      id="{{ detail.storeName }}"
+                      (click)="selectStore(detail)"
+                      name="prodVer"
+                      value="{{ detail.storeName }}"
+                    />
+                    <label
+                      style="margin-left: 5px; margin-right: 5px"
+                      for="{{ detail.storeName }}"
+                      ><strong>{{ detail.storeName }}</strong
+                      ><span style="padding-left: 10px"
+                        ><i
+                          class="fa fa-map-marker"
+                          style="margin-right: 3px"
+                        ></i>
+                        {{ detail.distance }}
+                      </span></label
+                    >
+                    <div class="info-store">
+                      <p>{{ detail.address }}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-customer pt-3">
+            <h5>Thông tin liên hệ</h5>
+            <div class="name pt-2">
+              <label for="name">Họ và tên</label>
+              <input
+                id="name"
+                type="text"
+                pInputText
+                [(ngModel)]="nameCustomer"
+              />
+            </div>
+            <div class="email">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="text"
+                pInputText
+                [(ngModel)]="emailCustomer"
+              />
+            </div>
+            <div class="address">
+              <label for="address">Địa chỉ</label>
+              <input
+                id="address"
+                type="text"
+                pInputText
+                [(ngModel)]="addressCustomer"
+              />
+            </div>
+            <div class="mobile">
+              <label for="mobile">Số điện thoại</label>
+              <input
+                id="mobile"
+                type="text"
+                pInputText
+                [(ngModel)]="mobileCustomer"
+              />
+            </div>
+            <label>Lời nhắn của bạn</label>
+            <!-- <ul class="d-flex">
+                            <li>update
+                                <input type="radio" value="Điện thoại">
+                            </li>
+                            <li>
+                                <input type="radio" value="Email">
+                            </li>
+                        </ul> -->
+            <div class="message">
+              <textarea pInputTextarea [(ngModel)]="message"></textarea>
+            </div>
+            <div class="action">
+              <button class="btn btn-primary" (click)="saveRequest()">
+                Gửi yêu cầu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast-container">
+  <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

@@ -1,0 +1,93 @@
+<div class="filter">
+  <div class="title" style="margin-top:0px">Tìm kiếm sản phẩm</div>
+  <div class="field">
+    <div class='wrapKey'>
+      <div class="fieldTitle">Từ khóa</div>
+      <p-chips [(ngModel)]="listKeys"></p-chips>
+    </div>
+    <div class='wrapKey'>
+      <div class="fieldTitle">Màu sắc</div>
+      <p-multiSelect [options]="colors" [(ngModel)]="selectedColors" defaultLabel="Chọn màu" display="chip"
+        optionLabel="name">
+        <ng-template let-color pTemplate="item">
+          <div class="colorItem">
+            <div class="circle" [style.background]="color.value"></div>
+            <div>{{color.name}}</div>
+          </div>
+        </ng-template>
+      </p-multiSelect>
+    </div>
+    <div class='wrapKey'>
+      <div class="fieldTitle">Giá </div>
+      <p-multiSelect [options]="prices" [(ngModel)]="selectedPrices" defaultLabel="Chọn danh mục" display="chip">
+      </p-multiSelect>
+    </div>
+    <div class='wrapKey'>
+      <div class="fieldTitle">Đại lý </div>
+      <p-multiSelect [options]="stores" [(ngModel)]="selectedStores" defaultLabel="Chọn đại lý" display="chip">
+      </p-multiSelect>
+    </div>
+    <div class='wrapKey'>
+      <div class="fieldTitle">Danh mục sản phẩm </div>
+      <p-multiSelect [options]="cates" [(ngModel)]="selectedCates" defaultLabel="Chọn danh mục" display="chip">
+      </p-multiSelect>
+    </div>
+
+  </div>
+  <div class="wrapBtn">
+    <button type="button" class="btn btn-primary" (click)="findProduct()">Tìm kiếm</button>
+  </div>
+
+
+  <div *ngIf="showResult">
+    <p-divider></p-divider>
+    <div class="result">
+      <div class="resultImage">
+        <img src="./assets/images/productDetail1.jpg" alt="">
+        <img src="./assets/images/productDetail2.jpg" alt="">
+      </div>
+      <div class="resultItem">
+        <a class="name" [routerLink]="'/product/123'">Polo</a>
+        <div *ngFor="let item of fakeDataOrder" class="resultItemBody">
+          <div class="resultItemInfo">
+            <div class="key">{{fakeDataKey[item]}}</div>
+            <div class="value">{{fakeDataValue[item]}}</div>
+          </div>
+          <p-divider></p-divider>
+        </div>
+        <div class="mt-4">
+          <a type="button" class="btn btn-primary" [routerLink]="'/product/123'">
+            <i class="pi pi-chevron-right"></i>
+            Xem thêm
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <p-divider></p-divider>
+    <div class="result">
+      <div class="resultImage">
+        <img src="./assets/images/productDetail1.jpg" alt="">
+        <img src="./assets/images/productDetail2.jpg" alt="">
+      </div>
+      <div class="resultItem">
+        <a class="name" [routerLink]="'/product/123'">Polo</a>
+        <div *ngFor="let item of fakeDataOrder" class="resultItemBody">
+          <div class="resultItemInfo">
+            <div class="key">{{fakeDataKey[item]}}</div>
+            <div class="value">{{fakeDataValue[item]}}</div>
+          </div>
+          <p-divider></p-divider>
+        </div>
+        <div class="mt-4">
+          <a type="button" class="btn btn-primary " [routerLink]="'/product/123'">
+            <i class="pi pi-chevron-right"></i>
+            Xem thêm
+          </a>
+        </div>
+      </div>
+    </div>
+    <p-divider></p-divider>
+  </div>
+</div>
+<app-menu-right></app-menu-right>

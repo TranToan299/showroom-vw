@@ -1,0 +1,27 @@
+<div class="container {{mt?'':'mt-100'}}" [style]="mt?'margin-top:'+mt:''"> 
+  <h1 class="text-center text-black font-weight-bold fs-title-cate" *ngIf="title">
+    {{title}}
+  </h1>
+  <div class="row mt-70">
+    <div class="col-12 col-md-7">
+      <img [src]="images[0]" alt="">
+    </div>
+    <div class="col-12 col-md-5 ">
+      <div class="pl-0 pl-md-5">
+        <div class="mt-5 mt-md-0" *ngFor="let info of infos">
+          <p class="font-weight-bold fs-18">{{info.title}}</p>
+          <p class="text-body mt-3">{{info.value}}
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-12 col-md-3 mt-5">
+      <img [src]="images[1]" alt="">
+    </div>
+    <div class="col-12 col-md-9 mt-5 ">
+      <img class="pl-md-5 pl-0" [src]="images[2]" alt="">
+    </div>
+  </div>
+
+</div>

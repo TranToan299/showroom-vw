@@ -1,0 +1,176 @@
+.wrap {
+    position: relative;
+    .show {
+        .video {
+            width: 100%;
+            object-fit: cover;
+            max-height: calc(100vh - 116px) !important;
+        }
+        h1 {
+            color: #001e50;
+            text-align: center;
+        }
+        .form {
+            h3 {
+                color: #001e50;
+                margin-top: 30px;
+            }
+        }
+    }
+    .toast-thank {
+        font-family: Roboto;
+        background: rgb(0, 30, 80);
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999999999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 100px;
+
+        .content {
+            background: #fff;
+            color: rgb(0, 30, 80);
+            padding-left: 100px;
+            padding-right: 100px;
+            .logo {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 70px;
+            }
+            .text-thank {
+                font-weight: 600;
+                font-size: 24px;
+                text-align: center;
+
+                span {
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+            }
+            .will {
+                font-size: 22px;
+                margin-top: 30px;
+                text-align: center;
+                font-weight: 500;
+            }
+            .text-thank2 {
+                margin-top: 4px;
+                font-size: 22px;
+                font-weight: 400;
+                text-align: center;
+            }
+            .name {
+                margin-top: 30px;
+                font-weight: 700;
+                font-size: 28px;
+                text-align: center;
+            }
+            .wrap-btnBlue {
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+
+                margin-bottom: 70px;
+            }
+        }
+    }
+}
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.hidden {
+    display: none !important;
+}
+.btnBlue {
+    background: rgb(0, 30, 80);
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btnBlue:hover {
+    background: #2c72c6;
+}
+
+//  mobile
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    .toast-thank {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        .content {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            .text-thank {
+                font-size: 22px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+            }
+            .will {
+                font-size: 22px;
+            }
+            .text-thank2 {
+                font-size: 22px;
+            }
+            .name {
+                font-size: 28px;
+            }
+        }
+    }
+    label {
+        font-size: 14px !important;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .wrap {
+        .toast-thank {
+            .content {
+                padding: 15px !important;
+                .logo {
+                    display: none !important;
+                }
+                .wrap-btnBlue {
+                    display: none !important;
+                }
+
+                .text-thank {
+                    font-size: 18px !important;
+                    span {
+                        font-size: 24px !important;
+                    }
+                }
+                .will {
+                    font-size: 18px !important;
+                    margin-top: 18px !important;
+                }
+                .text-thank2 {
+                    font-size: 18px !important;
+                }
+                .name {
+                    font-size: 22px !important;
+                    margin-top: 18px;
+                }
+            }
+        }
+    }
+}

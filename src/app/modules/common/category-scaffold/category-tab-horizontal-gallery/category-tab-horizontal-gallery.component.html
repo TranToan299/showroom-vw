@@ -1,0 +1,43 @@
+<div class="container-fluid  {{mt?'':'mt-100'}}" [style]="mt?'margin-top:'+mt:''" [id]="id">
+    <h1 class="text-black font-weight-bold text-center fs-title-cate" *ngIf="title">{{title}}</h1>
+    <div class="row mt-70">
+      <div class="col-12 col-md-7 pl-0">
+        <!-- <img src="{{image}}" alt=""> -->
+        <p-carousel [value]="this.image" [numVisible]="1" [numScroll]="1" [circular]="false">
+          <ng-template let-product pTemplate="item">
+            <div class="product-item">
+              <div class="product-item-content">
+                <div class="p-mb-3">
+                </div>
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12">
+                      <img [src]="product" alt="" style="height:auto;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+      <div class="col-12 col-md-5 mt-4 mt-md-0">
+        <p-accordion (onOpen)="onTabOpen($event)">
+          <ng-container *ngFor="let item of content; let i = index">
+            <p-accordionTab [header]="item.header" [selected]="i==0?true:false">
+              <div class="font-weight-bold fs-18 text-black" *ngIf="item.title">{{item.title}}</div>
+              <p class="mt-2 text-black" *ngIf="item.description">{{item.description}}</p>
+
+              <div *ngFor="let sub of item.listItem">
+                <p class="mt-2 text-black font-weight-bold" *ngIf="sub.subTitle">{{sub.subTitle}}</p>
+                <ul class="list-info mt-4" *ngIf="sub.list">
+                  <li class="text-black mobile-size item-info" *ngFor="let li of sub.list">{{li}} </li>
+                </ul>
+              </div>
+              
+            </p-accordionTab>
+          </ng-container>
+        </p-accordion>
+      </div>
+    </div>
+  </div>

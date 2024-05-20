@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="product">
+        <ul class="d-flex">
+            <li *ngFor="let car of arrCar">
+                <div class="product-feature d-flex flex-column">
+                    <img src='./assets/3d/png/{{car}}.jpg' height="450" (click)="selectCar(car)" />
+                    <h3>{{car.toLocaleUpperCase()}}</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

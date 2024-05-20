@@ -1,0 +1,37 @@
+<div class="des">
+  <h3>Bring everyone <strong>along for the ride.</strong></h3>
+  <h6>Wherever you’re going, whoever you’re taking along, do it comfortably with the 2022 Atlas.</h6>
+</div>
+<div class="wrapMenu">
+  <div class="menu">
+    <div class="wrapImage">
+      <img src="./assets/images/exteriorGallery.jpg" alt="" class="zoomOwn">
+    </div>
+    <div (click)="onClickExterior()" class="title">Xem bộ sưu tập ngoại thất</div>
+  </div>
+  <div class="menu">
+    <div class="wrapImage">
+      <img src="./assets/images/interiorGallery.jpg" alt="" class="zoomOwn">
+    </div>
+    <div (click)="onClickInterior()" class="title">Xem bộ sưu tập nội thất</div>
+  </div>
+</div>
+
+<p-dialog header="Bộ sưu tập ngoại thất" [(visible)]="displayModalExterior" [modal]="true" [style]="{width: '90vw'}"
+  [draggable]="false">
+  <p-carousel [value]="listExterior" [numVisible]="1" [numScroll]="1" [circular]="true">
+    <ng-template let-product pTemplate="item">
+      <img src="{{product}}" alt="" style="width:100%;object-fit: cover;height:80vh" class="image">
+    </ng-template>
+  </p-carousel>
+</p-dialog>
+
+<p-dialog header="Bộ sưu tập nội thất" [(visible)]="displayModalInterior" [modal]="true" [style]="{width: '90vw'}"
+  [draggable]="false">
+  <p-carousel [value]="listInterior" [numVisible]="1" [numScroll]="1" [circular]="true">
+    <ng-template let-product pTemplate="item">
+      <img src="{{product}}" alt="" class="image">
+    </ng-template>
+  </p-carousel>
+</p-dialog>
+<app-menu-right></app-menu-right>

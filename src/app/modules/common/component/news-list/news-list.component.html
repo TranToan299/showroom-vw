@@ -1,0 +1,85 @@
+<div class="wrap" *ngIf="newsListShow.length">
+    <h1 class="text-center title">Tin tức</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="news">
+                    <ng-container *ngIf="newsListShow[0].TypeImage=='Image'">
+                        <a [routerLink]="['/news',newsListShow[0].Id]">
+                            <img src="{{newsListShow[0].ImageUrl}}" alt="">
+                        </a>
+                        <a [routerLink]="['/news',newsListShow[0].Id]"
+                            class="title titleOne mt-2">{{newsListShow[0].title}}</a>
+                    </ng-container>
+                    <ng-container *ngIf="newsListShow[0].TypeImage=='Youtube'">
+                        <iframe width="100%" height="500" style="max-height: 60vh;"
+                            [src]="newsListShow[0].ImageUrl|safe" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+
+                        <a [routerLink]="['/news',newsListShow[0].Id]"
+                            class="title titleOne mt-2">{{newsListShow[0].title}}</a>
+                            <div  >
+                                <a [routerLink]="['/news',newsListShow[0].Id]" class="customButton zoomOwn mobile-size"
+                >Tìm hiểu thêm</a
+              >
+                            </div>
+                    </ng-container>
+                </div>
+            </div>
+            <ng-container *ngFor="let news of newsListShow;let i = index">
+                <div class="col12 col-md-6" *ngIf="i!=0">
+                    <div class="news">
+                        <ng-container *ngIf="news.TypeImage=='Image'">
+                            <a [routerLink]="['/news',news.Id]">
+                                <img src="{{news.ImageUrl}}" alt="">
+                            </a>
+                            
+                            <a [routerLink]="['/news',news.Id]" class="title titleMany mt-2">{{news.title}}</a>
+                            <div>
+                                <a [routerLink]="['/news',news.Id]" class="customButton zoomOwn mobile-size"
+                >Tìm hiểu thêm</a
+              >
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="news.TypeImage=='Youtube'">
+                            <iframe width="100%" height="500" style="max-height: 60vh;" [src]="news.ImageUrl|safe"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <a [routerLink]="['/news',news.Id]" class="title titleMany mt-2">{{news.title}}</a>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="pagination mt-5">
+            <nav aria-label=" Page navigation ">
+                <ul class=" pagination">
+                    <li class="page-item">
+                        <a class="page-link" [routerLink]="linkPagination[0].link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <ng-container *ngFor="let page of linkPagination;let i = index">
+                        <li class="page-item {{pageIndex==page.index?'active':''}}">
+                            <a class="page-link" [routerLink]="page.link">{{page.index}}</a>
+                        </li>
+                    </ng-container>
+                    <li class="page-item">
+                        <a class="page-link" [routerLink]="linkPagination[linkPagination.length-1].link"
+                            aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
+<div class="toast-container">
+    <p-toast [breakpoints]="{ '576px': { width: '300px' } }"></p-toast>
+</div>
+<app-cart></app-cart>
+<app-facebook-chat></app-facebook-chat>

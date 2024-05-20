@@ -1,0 +1,26 @@
+<div class="product">
+    <p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="5" [numScroll]="1" [circular]="true"
+        [autoplayInterval]="10000" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
+        <ng-template pTemplate="header">
+        </ng-template>
+
+        <ng-template let-product pTemplate="item">
+            <div class="product-item" (click)="clickItem(product)">
+                <div style="height: 340px;display: flex;align-items: flex-end;justify-content: center;">
+                    <div class="product-item-content">
+                        <img src="{{backgroundCars[product.name]}}" alt="" class="bg">
+                        <div class="layer"></div>
+                        <!-- <img class="water-mark" src="./assets/resources/logo.png" height="150"> -->
+                        <!-- <img class="car" src="{{product.image}}" width="220"> -->
+                        <div class="info d-flex flex-column align-items-start">
+                            <h5 class="p-mb-1 pt-2">{{product.name}}</h5>
+                            <h6 class="p-mt-0 p-mb-3" style="font-weight: 400;">{{product.description}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+
+    </p-carousel>
+</div>

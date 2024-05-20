@@ -1,0 +1,27 @@
+.wrap-name {
+    max-width: 50%;
+    min-width: 30%;
+    background: #00285c;
+    display: inline-block;
+}
+
+.container {
+    font-size: 18px;
+}
+
+@media only screen and (max-width:900px) {
+    .wrap-name {
+        width: 70% !important;
+        max-width: 70% !important;
+    }
+}
+
+
+@media only screen and (max-width:576px) {
+    .wrap-name {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+}
+

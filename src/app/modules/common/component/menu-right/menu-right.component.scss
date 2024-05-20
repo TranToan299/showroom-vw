@@ -1,0 +1,77 @@
+.wrapMenuRight {
+    position: fixed;
+    bottom: 80px;
+    transform: translateY(-50%);
+    right: 12px;
+    transition: ease 0.4s;
+
+    .circle {
+        // border-radius: 50%;
+        // height: 40px;
+        // width: 40px;
+        margin-top: 30px;
+    }
+
+    .menuList {
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+    }
+
+    .hideToRight {
+        // right:-15rem;
+        right: -110%;
+        // transition: ease 0.4s;
+    }
+
+    .menuIcon {
+        position: absolute;
+        right: 0;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .menuIconContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin: 0 12px;
+        background: radial-gradient(circle at 50% 85%, #00437a 0%, #001e50 100%);
+        border-radius: 50%;
+        transition: transform  0.4s ease;
+    }
+
+    .cartCount {
+        position: absolute;
+        top: -8px;
+        /* right: 22.5px; */
+        left: -5px;
+        background: #ff0000;
+        font-size: 1.4rem;
+        width: 25px;
+        font-weight: bold;
+        height: 25px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px #0000009c;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+}

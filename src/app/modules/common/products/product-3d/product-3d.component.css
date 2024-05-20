@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+} 
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+.view {
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.control-left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  height: 300px;
+  margin-top: -150px;
+  /* border: 1px solid #fff; */
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  border: 1px solid #fff;
+}
+
+.button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+}
+
+.control-top {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.control-bottom {
+  position: absolute;
+  bottom: 50px;
+  width: 90vw;
+  /* border: 1px solid #fff; */
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5vw;
+  align-items: flex-start;
+  color: #fff;
+  /* background-color: red; */
+  /* opacity: 0.5; */
+}
+
+.control-bottom .color {
+  height: 50px;
+}
+
+.control-bottom .icon {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  position: relative;
+}
+
+.icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: -16px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.center div {
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 25px;
+  color: #252391;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.center div:hover {
+  background-color: #2173c0;
+  color: #252391;
+}
+
+.center .active {
+  background-color: #2173c0;
+  color: #252391;
+}
+
+#prev,
+#next {
+  cursor: pointer;
+}

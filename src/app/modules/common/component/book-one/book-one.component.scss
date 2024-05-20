@@ -1,0 +1,513 @@
+.wrap {
+  font-family: Roboto;
+  position: relative;
+  padding-top: 100px;
+
+  &.book-one-component {
+    padding-top: 0px;
+  }
+
+ 
+
+  .top-title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .list-image {
+    .list-image-item {
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .active::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      height: 2px;
+      background: #2C72C6;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  .detail {
+    // img {
+    //   width: 100%;
+    // }
+
+    .info {
+      .price {
+        .price-value {
+          color: #2C72C6;
+          font-weight: 700;
+          font-size: 20px;
+          margin-left: 10px;
+          position: relative;
+          bottom: 4px;
+        }
+      }
+
+      .version {
+        .active {
+          border: 2px solid #2C72C6 !important;
+        }
+
+        .version-item {
+          padding: 10px 20px;
+          border: 1px solid #333;
+          margin: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .color {
+        .active::after {
+          content: '';
+          width: 30px;
+          height: 30px;
+          top: -3px;
+          left: -3px;
+          position: absolute;
+          border: 2px #2C72C6 solid;
+          border-radius: 50%;
+        }
+
+        .color-item {
+          height: 24px;
+          width: 24px;
+          border-radius: 50%;
+          margin: 10px;
+          position: relative;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.toast-container {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.required {
+  color: #2C76C8;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.btnBlue {
+  background: rgb(0, 30, 80);
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.btnBlue:hover {
+  background: #2C72C6;
+}
+
+.toast-thank {
+  font-family: Roboto;
+  background: rgb(0, 30, 80);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+
+
+  .content {
+    background: #fff;
+    color: rgb(0, 30, 80);
+    padding-left: 100px;
+    padding-right: 100px;
+
+    .logo {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 70px;
+    }
+
+    .text-thank {
+      font-weight: 600;
+      font-size: 24px;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+
+    .will {
+      font-size: 22px;
+      margin-top: 30px;
+      text-align: center;
+      font-weight: 500;
+
+    }
+
+    .text-thank2 {
+      margin-top: 4px;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .name {
+      margin-top: 30px;
+      font-weight: 700;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .wrap-btnBlue {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 70px;
+    }
+  }
+}
+
+:host ::ng-deep p-checkbox {
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+:host ::ng-deep p-radiobutton {
+  align-items: center;
+  margin-top: 20px;
+}
+
+:host ::ng-deep label {
+  // margin-bottom: 0;
+}
+
+.carou-image {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  height: auto;
+}
+@media only screen and (max-width: 820px) {
+  .carou-image {
+      max-height: 620px !important;
+  }
+}
+
+@media only screen and (max-width:576px) {
+  .wrap {
+    padding-top: 50px;
+  }
+
+  .top-title {
+    margin-top: 10px;
+    font-size: 1rem !important;
+    margin-bottom: 10px;
+    p {
+      margin-bottom: 8px !important;
+    }
+  }
+  
+    .carou-image {
+      width: 100%;
+      height: 220px;
+    }
+
+  .productName {
+    display: none;
+  }
+  .toast-thank {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .content {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .text-thank {
+        font-size: 22px;
+
+        span {
+          font-weight: bold;
+          font-size: 30px;
+        }
+      }
+
+      .will {
+        font-size: 22px;
+
+      }
+
+      .text-thank2 {
+
+        font-size: 22px;
+
+      }
+
+      .name {
+
+        font-size: 28px;
+
+      }
+    }
+
+  }
+
+  label {
+    font-size: 14px !important;
+  }
+
+  :host ::ng-deep label {
+    font-size: 14px !important;
+    margin-bottom: 0;
+  }
+
+
+}
+
+.show-image {
+  background-color: rgba(255, 255, 255, 0.611);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 56px;
+
+  .book-image {
+    width: 60%;
+  }
+
+  .book-now {
+    margin-top: 10px;
+    font-size: 24px;
+    background: radial-gradient(circle at 50% 85%, #00437a 0%, #001e50 100%);
+    color: #fff;
+    padding: 6px 24px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width:991px) {
+    .book-image {
+      width: 95%;
+    }
+      padding: 0;
+}
+  }
+
+@media only screen and (max-width:350px) {
+  .wrap {
+    .toast-thank {
+      .content {
+        padding: 15px !important;
+
+        .logo {
+          display: none !important;
+        }
+
+        .wrap-btnBlue {
+          display: none !important;
+        }
+
+
+        .text-thank {
+          font-size: 18px !important;
+
+          span {
+
+            font-size: 24px !important;
+          }
+        }
+
+        .will {
+          font-size: 18px !important;
+          margin-top: 18px !important;
+        }
+
+        .text-thank2 {
+
+          font-size: 18px !important;
+
+        }
+
+        .name {
+
+          font-size: 22px !important;
+          margin-top: 18px;
+
+        }
+      }
+
+    }
+  }
+
+}
+
+.pre-price {
+  margin-top: 12px;
+  font-size: 20px;
+
+
+  &-value {
+    color: #2C76C8;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width:576px) {
+    font-size: 15px;
+  }
+}
+
+.section {
+  margin-top: 100px;
+
+  @media only screen and (max-width:576px) {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  &-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    
+    &.light {
+      font-weight: 400;
+    }
+    
+    &.span {
+      font-size: 1.6rem;
+      font-weight: 400;
+
+    }
+
+    
+  @media only screen and (max-width:576px) {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    &.span {
+      font-size: 0.9rem;
+      font-weight: 400;
+
+    }
+  }
+  }
+}
+
+.section2 {
+  margin-bottom: 100px;
+  margin-top: 30px;
+
+  p {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width:576px) {
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 10px;
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+
+
+.allow-flex {
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width:576px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.left-content {
+  padding-left: 48px;
+
+  @media only screen and (max-width:576px) {
+    padding: 0 14px;
+
+  }
+}
+
+.right-content {
+  padding-right: 48px;
+
+  @media only screen and (max-width:576px) {
+    padding: 0 14px;
+
+  }
+}
+
+.prebook-title {
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 500;
+
+  @media only screen and (max-width:576px) {
+    margin-bottom: 20px;
+    font-size: 24px;
+    margin-top: 10px;
+    
+  }
+}
+
+.versions {
+  margin-top: 30px;
+
+  @media only screen and (max-width:576px) {
+    margin-top: 10px;
+  }
+}
+
+.version-more {
+  font-size: 36px;
+  font-weight: 500;
+
+  @media only screen and (max-width:576px) {
+    font-size: 16px;
+
+  }
+}
+
+.viloran-img {
+  width: 100% + 30%;
+
+  @media only screen and (max-width:576px) {
+    width: 100%;
+
+  }
+}
+
+.item-img  {
+  width: 100%;
+}

@@ -1,0 +1,63 @@
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.video-container {
+    max-height: 650px;
+}
+
+.wrap {
+    .description {
+        font-size:20px;
+        line-height:24px;
+    }
+    .mainTitle {
+        font-size: 62px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .title{
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width:1300px) {
+    .wrap {
+        .description {
+            font-size: 18px;
+            line-height: 21px;
+        }
+        .mainTitle {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .title{
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+
+@media only screen and (max-width:860px) {
+    .wrap {
+        .mainTitle {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .title{
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}

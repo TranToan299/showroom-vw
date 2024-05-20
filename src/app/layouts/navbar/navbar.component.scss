@@ -1,0 +1,403 @@
+.hiden {
+    display: none !important;
+}
+
+.bottom-hide{
+    top:-150px !important;
+    transition:0.5s !important;
+}
+
+.background-white{
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.gradient-background{
+    background: linear-gradient(rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0)) !important;
+    position: fixed !important;
+}
+
+
+#navbar {
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 100001;
+    display: block;
+
+    .wrapBtn {
+        
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 3px 2px 0px 20px;
+        background:transparent;
+
+        img {
+            cursor: pointer;
+            width: 60px;
+            height: 50px;
+            padding: 15px 20px 15px 20px;
+        }
+
+    }
+
+    .bottom {
+        display: flex;
+        width: 100vw;
+        // margin-top: 20px;
+        position: relative;
+        top: 10px;
+        align-items: flex-end;
+        transition:0.5s;
+
+        
+        .line-left {
+            border-top: 3px solid white;
+            flex: 3;
+            z-index: 555;
+        }
+
+        .logo-center {
+            padding-left: 10px;
+            padding-right: 10px;
+            position: relative;
+            top: 20px;
+            z-index: 999;
+            // top:-25px;
+        }
+
+        .background {
+            position: absolute;
+            top: -10px;
+            height: 100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            display: block;
+            pointer-events: none;
+        }
+
+        .line-right {
+            border-top: 3px solid white;
+            flex: 1;
+            min-width: 230px;
+            z-index: 555;
+        }
+    }
+
+}
+
+/* Menu */
+a:hover {
+    color: rgb(0, 176, 240);
+}
+
+a {
+    cursor: pointer;
+    user-select: none;
+}
+
+#menu {
+    background: radial-gradient(84.38% 88.15% at -21.32% -26.39%,
+            #00437a 0%,
+            #001e50 100%);
+    transform: translateX(-100%);
+    transition: all ease 0.6s;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000000;
+    padding: 40px;
+
+
+    .btnCloseMenu {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+    }
+
+    .item-link {
+        font-family: Roboto;
+        font-style: normal;
+        color: #000;
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 300;
+        padding: 8px 0;
+        display: inline-block;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .menuBody {
+        padding-left: 100px;
+        padding-right: 100px;
+        display: flex;
+
+        .sepa {
+            border-left: 2px solid #ffffff;
+            align-self: stretch;
+            margin-right: 40px;
+        }
+
+        .colL {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+
+        .colL::-webkit-scrollbar {
+            // width: 0 !important;
+            display: none;
+        }
+
+        .colR {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .titleTopLink {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 24px;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            a {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 40px;
+                color: #ffffff;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .contact {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 28px;
+                color: #ffffff;
+            }
+
+            .contactContent {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 28px;
+                // margin-top: 10px;
+            }
+
+            .imgSeePhone {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                max-width: 300px;
+            }
+        }
+
+        .menuNavi {
+            color: #fff;
+            display: flex;
+
+            .menuNaviItem {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .sepaHori {
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 14px;
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+
+
+}
+
+
+
+#submenu {
+    display: flex;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000001;
+    position: fixed;
+    transform: translateX(100%);
+    transition: all ease 0.6s;
+
+    .item-name {
+        font-family: Roboto;
+        font-style: normal;
+        font-size: 24px;
+        color: #000;
+        margin-bottom: 30px;
+
+    }
+
+    .item-link {
+        font-family: Roboto;
+        font-style: normal;
+        color: #000;
+        font-size: 20px;
+        text-decoration: none;
+        color: #888;
+        font-weight: 300;
+        padding: 6px 0;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .colL {
+        width: 70px;
+        color: #fff;
+        background: #003c73;
+
+        .wrapBtnClose {
+            height: 70px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+
+    .colR {
+        background: #fff;
+        flex: 1;
+        padding-left: 100px;
+        padding-right: 100px;
+
+        .colR-half {
+            width: 50%;
+        }
+
+        .comeback {
+            // height: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+
+            .wrapBtnComeback {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+// tablet and mobile
+@media only screen and (max-width : 1024px) {
+    #menu {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        transition: all ease 0.4s;
+
+        .menuBody {
+            padding-left: 80px !important;
+            padding-right: 80px !important;
+
+            .colL {
+                // min-height: 0!important;
+            }
+
+            .menuNavi {
+                // margin-top: 50px;
+            }
+        }
+    }
+}
+
+//  mobile
+@media only screen and (max-width:576px) {
+    nav {
+        .bottom {
+            height: 48px !important;
+
+            //display: none!important;
+            .line-right {
+                min-width: 100px !important;
+                flex: 3 !important;
+            }
+
+            .logo-mobile {
+                width: 32px;
+                height: 32px;
+            }
+
+            .logo-center {
+                top: 15px !important;
+            }
+        }
+    }
+
+    #menu {
+        padding: 0 !important;
+
+        .btnCloseMenu {
+            margin-top: 20px !important;
+            margin-left: 20px !important;
+
+        }
+
+        .item-link {
+            font-size: 18px;
+        }
+
+        .menuBody {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+
+            .menuNavi {
+                font-size: 18px !important;
+            }
+        }
+
+        .colR img {
+            width: 40vw !important;
+        }
+
+        .sepa {
+            margin-right: 10px !important;
+        }
+    }
+
+    #submenu {
+        .colL {
+            width: 50px;
+        }
+
+        .colR {
+            padding-left: 20px;
+            padding-right: 0px;
+        }
+
+        .item-link {
+            font-size: 18px;
+
+        }
+    }
+
+}

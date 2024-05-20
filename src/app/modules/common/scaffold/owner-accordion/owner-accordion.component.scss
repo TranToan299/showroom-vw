@@ -1,0 +1,22 @@
+.list-info {
+  list-style: none;
+
+  .item-info {
+    display: flex;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      min-width: 13px;
+      height: 2px;
+      background: black;
+      margin-right: 15px;
+      position: relative;
+      top: 13px;
+    }
+  }
+}
+
+:host ::ng-deep .p-accordion-header-link {
+  text-decoration: none;
+}

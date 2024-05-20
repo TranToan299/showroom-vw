@@ -1,0 +1,82 @@
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+} 
+.wrap {
+  padding-top: 100px;
+  font-family: Roboto;
+
+  .title {
+    margin-top: 50px;
+  }
+
+  .news {
+    margin-top: 50px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .title {
+      color: #001e50;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .titleOne {
+      font-size: 22px;
+    }
+
+    .titleMany {
+      font-size: 20px;
+      color: #000;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+video {
+  width: 100%;
+}
+
+@media only screen and (max-width:576px) {
+  .wrap {
+    padding-top: 100px;
+
+    .title {
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    .news {
+      .titleOne {
+        font-size: 18px;
+      }
+
+      .titleMany {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.customButton {
+  transition: all 0.2s ease-in-out 0s;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  color: rgb(0, 30, 80);
+  font-size: 1rem;
+  font-family: Roboto;
+  margin-top: 5px;
+  text-decoration: underline;
+}

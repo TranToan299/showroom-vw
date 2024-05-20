@@ -1,0 +1,41 @@
+.wrap{
+  padding-top: 100px;
+  .summary{
+    .icon{
+      position: relative;
+      top: 4px;
+      display: inline-block;
+    }
+  }
+
+}
+.btnBlue{
+  background: rgb(0, 30, 80);
+  padding: 10px 20px;
+  color:#fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.btnBlue:hover{
+  background: #2C72C6;
+}
+.required{
+  color:#2C76C8;
+}
+.toast-container{
+    z-index:9999999;
+    position: fixed;
+    top:0;
+    right:0;
+}
+
+@media only screen and (max-width:576px){
+  .wrap{
+    padding-top: 50px;
+    
+
+  }
+
+}

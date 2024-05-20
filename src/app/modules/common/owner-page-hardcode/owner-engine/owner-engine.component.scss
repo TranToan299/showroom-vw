@@ -1,0 +1,146 @@
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.video-container {
+    max-height: 650px;
+}
+
+.toast-container {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.p-dialog-titlebar-icons{
+    right: 20px;
+    position: fixed;
+}
+
+.p-dialog-header{
+    display: none !important;
+}
+
+.wrap {
+
+    overflow: hidden;
+    p {
+        font-family: "roboto-vi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .link {
+        display: inline-block;
+        color: rgb(0 30 80);
+        font-weight: 700;
+        text-decoration: underline;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .link:hover {
+        background-color: rgb(236, 242, 250)
+    }
+
+    .banner {
+        width: 100%;
+        max-height: 650px;
+        object-fit: cover;
+    }
+    .left-title-container{
+        border-left: 3px solid rgb(223, 228, 232);
+        margin-bottom:50px;
+    }
+    .title {
+        font-weight: 700 !important;
+        font-size: 60px;
+        max-width: 800px;
+        padding-left:40px;
+    }
+    .content{
+        max-width: 700px;
+    }
+
+    .separator {
+        border-bottom: 1px solid #f1f1f1;
+        width: 100%;
+        margin: 20px 0 20px 0;
+    }
+
+    .sepaVertical {
+        margin: 0 20px;
+        width: 2px;
+        display: inline-block;
+        background: rgb(0, 30, 80);
+        height: 16px;
+        position: relative;
+        top: 4px;
+    }
+
+    .blankLink{
+        color: black;
+        font-size:1.3rem;
+    }
+
+    .closeButton{
+        width: 40px;
+        height: 40px;
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .closeButton:hover{
+        background-color:rgb(236, 236, 236);
+    }
+
+    .closeButtonContainer{
+        width: 100%;
+        font-size: 1.8rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.dialogInfo {
+    width: 100vw !important;
+}
+
+@media only screen and (max-width:1600px) {
+    .wrap {
+        .banner {
+            max-height: 620px !important;
+        }
+
+        .title {
+            font-weight: 700 !important;
+            font-size: 48px;
+        }
+
+        
+    }
+
+}
+
+@media only screen and (max-width:820px) {
+    .wrap {
+        .banner {
+            max-height: 620px !important;
+        }
+
+        .title {
+            font-weight: 700 !important;
+            font-size: 2rem;
+        }
+    }
+
+}
